@@ -1,18 +1,19 @@
 # READ ME FIRST TO RUN OSPRO APPLICATION
-Tutorial untuk menjalankan Ospro pada lokal server
+Tutorial untuk menjalankan OSPRO pada lokal server
 
-Semua microservice yang berada pada repository untuk aplikasi ospro dapat di jalankan di lokal connection.
+Semua microservice yang berada pada repository untuk aplikasi OSPRO dapat di jalankan di lokal connection.
+
 Cara menjalankan ospro application
+
 ## Tutorial 
 Repository pada github untuk aplikasi ospro dibagi menjadi tiga yaitu Backend, Gateway dan Frontend.
-- Repository Backend : ms-project,ms-gantt,ms-activity,ms-dailyreport,ms-report,ms-user-management. (Semua yang bernama ms (microservice) itu adalah bagian dari backend.)
-- Repository Gateway : gateway
-- Repository Frontend : mf-main
+- Repository Backend : [ms-user-management](https://github.com/praditauniversity/ms-user-management), [ms-project](https://github.com/praditauniversity/ms-), [ms-gantt](https://github.com/praditauniversity/ms-gantt), [ms-activity](https://github.com/praditauniversity/ms-activity), [ms-dailyreport](https://github.com/praditauniversity/ms-dailyreport), [ms-report](https://github.com/praditauniversity/ms-report), dsb. (Semua yang bernama ms (microservice))
+- Repository Gateway : [gateway](https://github.com/praditauniversity/gateway)
+- Repository Frontend : [mf-main](https://github.com/praditauniversity/mf-main)
 
-Repository yang digunakan untuk menjalankan aplikasi ospro yang saat ini adalah ms-project,ms-gantt,ms-activity,ms-dailyreport,ms-report,ms-user-management,gatewa,dan mf-main
-jadi lakukanlah penarikan repository pada repository yang bernama di atas untuk menjalakan aplikasi ospro
+Lakukanlah penarikan pada repositori-repositori di atas untuk menjalakan aplikasi OSPRO. Dapat dilakukan melalui [GitHub Desktop](https://desktop.github.com/) atau [GitHub di command line](https://cli.github.com/).
 
-Setelah melakukan penarikan pada repository yang sudah disebut lakukan langkah selanjutnya yaitu instalasi docker https://www.docker.com/
+Setelah melakukan penarikan pada repository yang sudah disebut lakukan langkah selanjutnya yaitu instalasi [Docker](https://www.docker.com/), [Golang](https://docs.studygolang.com/doc/install), [NodeJs](https://nodejs.org/en/download)
 
 
 ## Instalasi Docker
@@ -46,6 +47,8 @@ Tiap repositori proyek yang telah dibuat akan di deploy menggunakan Docker menja
 > [Dependency Injection in Golang](https://www.youtube.com/watch?v=dZ8Ir4Gc8D0&t=137s)<br>
 > [Unit Test in Golang](https://www.youtube.com/watch?v=t9QJPE5vwhs&t=1414s)<br>
 > [Tutorial membuat web API Golang (FULL)](https://www.youtube.com/watch?v=GjI0GSvmcSU&t=1s)<br>
+
+Untuk membuat repositori untuk microservice baru, dapat mengikuti template project di [Project Template](https://github.com/praditauniversity/ms-scaffold)
 
 ## Gateway (GraphQL Mesh)
 GraphQL yaitu bahasa yang digunakan untuk query API, yang juga menghubungkan sisi depan website atau client kepada sistem database atau backend untuk melakukan operasi atau kueri seperti menampilkan, menambahkan, menyunting, dan menghapus data.
