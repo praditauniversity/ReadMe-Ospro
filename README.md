@@ -16,3 +16,10 @@ Setelah melakukan penarikan pada repository yang sudah disebut lakukan langkah s
 
 
 # Instalasi Docker
+Download docker pada link ini https://www.docker.com/ pilih lah sesuai dengan sistem operasi yang anda gunakan seperti windows atau linux
+jika anda menginstal menggunakan windows anda perlu melakukan beberapa langkah lagi untuk dapat menjalankan docker 
+pergi menuju microsoft store kemudian cari alpine setelah itu carilah aplikasi yang bernama Alpine WSL kemudian download 
+atau lalu ikuti tutorial di bawah ini 
+https://www.petanikode.com/docker-install/
+
+
