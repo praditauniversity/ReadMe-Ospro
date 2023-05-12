@@ -22,4 +22,12 @@ pergi menuju microsoft store kemudian cari alpine setelah itu carilah aplikasi y
 atau lalu ikuti tutorial di bawah ini 
 https://www.petanikode.com/docker-install/
 
+# How to Running docker dan Image docker 
+Buka visual studio code lalu buka folder ms-project atau ms lainnya 
+kemudian klik (ctrl + `) untuk membuat command prompt pada visual studio code 
+lalu pada command promt tulis docker compose up --build (artinya membuild image docker dan melakukan running pada aplikasi docker)
+untuk melakukan docker berjalan pada background application lakukan docker compose up --build -d (artinya membuild image docker dan melakukan running pada aplikasi docker dilakukan pada background aplikasi)
+Untuk mematikan docker yang sedang berjalan lakukan docker compose down 
+Untuk menghilangkan seluruh data docker dan image docker lakukan docker compose down -v
+Lakukan setiap hal ini pada semua microservice, gateway, forntend yang ingin di jalankan
 
