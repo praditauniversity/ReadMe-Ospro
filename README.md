@@ -38,10 +38,13 @@ Dalam setiap repositori proyek, diimplementasikan Clean Architecture yaitu merup
 - Service layer: tempat untuk memvalidasi request yang dikirimkan client ke dalam sistem aplikasi dan tempat dimana semua business logic berada. 
 - Controller layer: lapisan yang menerima request dari client dan memberikan fungsionalitas yang diperlukan berdasarkan autentikasi tertentu.
 
-Tiap repositori proyek yang telah dibuat akan di deploy menggunakan Docker menjadi beberapa container. Tiap Docker container memiliki dua Docker images didalamnya, yaitu fungsi aplikasi dan basis data aplikasi.
+Tiap repositori proyek yang telah dibuat akan di deploy menggunakan Docker menjadi beberapa container. Tiap Docker container memiliki dua Docker images didalamnya, yaitu fungsi aplikasi dan basis data aplikasi. Lalu untuk komunikasi antar microservices, menggunakan protokol REST API dengan port tertentu yang telah di inisiasi dalam masing-masing repositori proyek (dapat dilihat dalam .env di tiap repo).
 > [Go commands](https://dasarpemrogramangolang.novalagung.com/A-go-command.html)<br>
 > [CRUD API in Golang](https://www.youtube.com/watch?v=lf_kiH_NPvM)<br>
 > [JWT Authentication in Golang](https://www.youtube.com/watch?v=ma7rUS_vW9M)<br>
 > [Dependency Injection in Golang](https://www.youtube.com/watch?v=dZ8Ir4Gc8D0&t=137s)<br>
 > [Unit Test in Golang](https://www.youtube.com/watch?v=t9QJPE5vwhs&t=1414s)<br>
 > [Tutorial membuat web API Golang (FULL)](https://www.youtube.com/watch?v=GjI0GSvmcSU&t=1s)<br>
+
+## Gateway (GraphQL Mesh)
+GraphQL yaitu bahasa yang digunakan untuk query API, yang juga menghubungkan sisi depan website atau client kepada sistem database atau backend untuk melakukan operasi atau kueri seperti menampilkan, menambahkan, menyunting, dan menghapus data.
