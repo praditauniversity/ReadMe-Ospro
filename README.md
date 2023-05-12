@@ -50,5 +50,13 @@ Tiap repositori proyek yang telah dibuat akan di deploy menggunakan Docker menja
 
 Untuk membuat repositori untuk microservice baru, dapat mengikuti template project di [Project Template](https://github.com/praditauniversity/ms-scaffold)
 
+## Postman
+Download [Postman](https://www.postman.com/downloads/) atau Buka melalui [Postman Web](https://web.postman.co/home)
+<details> 
+  <summary>Sign in with Google Account</summary>
+  Gmail: livelycomet@gmail.com <br>
+  Password: SmartLiving#123
+</details>
+
 ## Gateway (GraphQL Mesh)
 GraphQL yaitu bahasa yang digunakan untuk query API, yang juga menghubungkan sisi depan website atau client kepada sistem database atau backend untuk melakukan operasi atau kueri seperti menampilkan, menambahkan, menyunting, dan menghapus data.
