@@ -25,9 +25,23 @@ https://www.petanikode.com/docker-install/
 ## How to Build Docker Image dan Run Docker  
 Buka visual studio code lalu buka folder ms-project atau ms lainnya 
 Buka terminal pada visual studio code 
-lalu pada command prompt tuliskan ```docker compose up --build``` (artinya membuild image docker dan melakukan running pada aplikasi docker)
-untuk melakukan docker berjalan pada background application lakukan ```docker compose up --build -d``` (artinya membuild image docker dan melakukan running pada aplikasi docker dilakukan pada background aplikasi)
+lalu pada command prompt tuliskan ```docker compose up --build``` (artinya membuild image docker dan melakukan running pada aplikasi docker).
+Untuk melakukan docker berjalan pada background application lakukan ```docker compose up --build -d``` (artinya mem-build docker image dan melakukan running pada aplikasi docker dilakukan pada background aplikasi).
 Untuk mematikan docker yang sedang berjalan lakukan ```docker compose down```. 
 Untuk menghilangkan seluruh data aplikasi beserta database di docker lakukan ```docker compose down -v```. 
-Lakukan setiap hal ini pada semua microservice, gateway, forntend yang ingin di jalankan
+Lakukan setiap hal ini pada semua microservice, gateway, frontend yang ingin di jalankan
 
+## Golang Tutorial
+Dalam setiap repositori proyek, diimplementasikan Clean Architecture yaitu merupakan pola desain perangkat lunak dengan memisahkan lapisan presentasi, lapisan domain, dan lapisan data, sehingga menjadi lebih mudah dalam memodifikasi dan memperluas kode tanpa menambahkan kompleksitas yang tidak perlu. Clean Architecture yang diterapkan dalam proyek ini terdiri dari 4 layer, yaitu models, repositories, services, dan controllers.
+- Models layer: tempat untuk menginisiasi nama kolom beserta tipe data dan relasinya dengan kolom lain dalam database. 
+- Repository layer: lapisan yang mengoperasikan kueri untuk penyimpanan dan pengambilan data dengan terhubung langsung ke dalam database. 
+- Service layer: tempat untuk memvalidasi request yang dikirimkan client ke dalam sistem aplikasi dan tempat dimana semua business logic berada. 
+- Controller layer: lapisan yang menerima request dari client dan memberikan fungsionalitas yang diperlukan berdasarkan autentikasi tertentu.
+
+Tiap repositori proyek yang telah dibuat akan di deploy menggunakan Docker menjadi beberapa container. Tiap Docker container memiliki dua Docker images didalamnya, yaitu fungsi aplikasi dan basis data aplikasi.
+> [Go commands](https://dasarpemrogramangolang.novalagung.com/A-go-command.html)<br>
+> [CRUD API in Golang](https://www.youtube.com/watch?v=lf_kiH_NPvM)<br>
+> [JWT Authentication in Golang](https://www.youtube.com/watch?v=ma7rUS_vW9M)<br>
+> [Dependency Injection in Golang](https://www.youtube.com/watch?v=dZ8Ir4Gc8D0&t=137s)<br>
+> [Unit Test in Golang](https://www.youtube.com/watch?v=t9QJPE5vwhs&t=1414s)<br>
+> [Tutorial membuat web API Golang (FULL)](https://www.youtube.com/watch?v=GjI0GSvmcSU&t=1s)<br>
