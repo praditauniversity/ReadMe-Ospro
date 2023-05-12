@@ -32,6 +32,30 @@ Untuk mematikan docker yang sedang berjalan lakukan ```docker compose down```.
 Untuk menghilangkan seluruh data aplikasi beserta database di docker lakukan ```docker compose down -v```. 
 Lakukan setiap hal ini pada semua microservice, gateway, frontend yang ingin di jalankan
 
+## How to Remove Unused Docker
+```bash
+# Displays information regarding the amount of disk space used by the docker daemon.
+docker system df
+docker system df -v
+```
+```bash
+# Delete old docker processes
+docker rm docker ps -a | grep Exited | awk '{print $1 }' ignore_errors: true
+```
+```bash
+# Delete old images. will complain about still-in-use images
+docker rmi docker images -aq
+```
+```bash
+# To remove all images which are not used by existing containers, use the -a flag:
+docker image prune -a
+```
+```bash
+# List and remove unused (dangling) volumes in Docker (the content of /var/lib/docker/volumes)
+docker volume ls -q -f "dangling=true"
+docker volume rm $(docker volume ls -q -f "dangling=true")
+```
+
 ## Golang Tutorial
 Dalam setiap repositori proyek, diimplementasikan Clean Architecture yaitu merupakan pola desain perangkat lunak dengan memisahkan lapisan presentasi, lapisan domain, dan lapisan data, sehingga menjadi lebih mudah dalam memodifikasi dan memperluas kode tanpa menambahkan kompleksitas yang tidak perlu. Clean Architecture yang diterapkan dalam proyek ini terdiri dari 4 layer, yaitu models, repositories, services, dan controllers.
 ![clean_architecture](https://github.com/praditauniversity/ReadMe-Ospro/assets/110759186/f73f42a6-f33f-4a22-ac11-4ebce0673e84)
