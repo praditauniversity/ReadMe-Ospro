@@ -11,3 +11,8 @@ Repository Frontend : mf-main
 
 Repository yang digunakan untuk menjalankan aplikasi ospro yang saat ini adalah ms-project,ms-gantt,ms-activity,ms-dailyreport,ms-report,ms-user-management,gatewa,dan mf-main
 jadi lakukanlah penarikan repository pada repository yang bernama di atas untuk menjalakan aplikasi ospro
+
+Setelah melakukan penarikan pada repository yang sudah disebut lakukan langkah selanjutnya yaitu instalasi docker https://www.docker.com/
+
+
+# Instalasi Docker
