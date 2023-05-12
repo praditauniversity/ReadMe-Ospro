@@ -64,7 +64,7 @@ Dalam setiap repositori proyek, diimplementasikan Clean Architecture yaitu merup
 - Service layer: tempat untuk memvalidasi request yang dikirimkan client ke dalam sistem aplikasi dan tempat dimana semua business logic berada. 
 - Controller layer: lapisan yang menerima request dari client dan memberikan fungsionalitas yang diperlukan berdasarkan autentikasi tertentu.
 
-Tiap repositori proyek yang telah dibuat akan di deploy menggunakan Docker menjadi beberapa container. Tiap Docker container memiliki dua Docker images didalamnya, yaitu fungsi aplikasi dan basis data aplikasi. Lalu untuk komunikasi antar microservices, menggunakan protokol REST API dengan port tertentu yang telah di inisiasi dalam masing-masing repositori proyek (dapat dilihat dalam .env di tiap repo).
+Tiap repositori proyek yang telah dibuat akan di deploy menggunakan Docker menjadi beberapa [container](https://www.docker.com/resources/what-container/). Tiap Docker container memiliki dua Docker images didalamnya, yaitu fungsi aplikasi dan basis data aplikasi. Lalu untuk komunikasi antar microservices, menggunakan protokol REST API dengan port tertentu yang telah di inisiasi dalam masing-masing repositori proyek (dapat dilihat dalam .env di tiap repo).
 > [Go commands](https://dasarpemrogramangolang.novalagung.com/A-go-command.html)<br>
 > [CRUD API in Golang](https://www.youtube.com/watch?v=lf_kiH_NPvM)<br>
 > [JWT Authentication in Golang](https://www.youtube.com/watch?v=ma7rUS_vW9M)<br>
