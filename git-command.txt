@@ -1,0 +1,33 @@
+git init // untuk menginisialisasi folder menjadi .git(master)
+git status //untuk mengetahui status dan file
+git add . //untuk menambahkan semua file agar dapat di commit
+git commit -m "<message>" //untuk commit file
+git checkout <hash> <nama file> //untuk mengembalikan file yang di delete
+git branch <nama_branch> // untuk membuat cabang branch
+git branch // untuk melihat branch apa saja yang ada
+alias graph="git log --all --decorate --oneline --graph" //shortcut graph
+git checkout <nama_branch> //untuk pindah ke branch yang dituju
+git merge <nama_branch> //untuk menggabungkan branch
+git branch -d <nama_branch> //untuk menghapus branch
+git branch --merged //mengetahui branch yang sudah di merge
+git clone <https> // untuk mengclone repo
+git remote //melihat nama remote
+git remote -v //melihat data lebih detail
+git push //untuk push ke github
+git config --list //untuk melihat username dan email
+git config --global user.name "username"
+git config --global user.email "email"
+git remote add origin https<> //untuk push ke github dari desktop
+git push -u origin master //push to github
+git fetch //untuk mengecek di github
+git pull //mengambil di github
+git fetch <nama remote> // untuk mengambil commit di repo awal
+//^^ dan juga untuk mengecek repo terupdate
+//jika ingin melakukan perubahan pada repo orang lain / pull request
+//lebih baik membuat branch baru agar branch master tetap sama dengan branch di repo utama
+//pull request adalah milik github
+git push origin --delete <namabranch> //untuk menghapus branch yang ada di remote master
+git rebase <nama_branch> //untuk memudahkan agar foward merge
+//dilakukan dari commit yang ketinggalan
+
+
