@@ -1,0 +1,33 @@
+Tips & Trick on Visual Studio Code
+
+#1 - Find a file in Visual Studio Code
+Step 1: Enter Ctrl + P on VSC
+Step 2: Find the file which you want to search by typing the file name
+
+#2 - Find a text within file
+Step 1: Enter Ctrl + Shift + F on VSC
+Step 2: Typing the text you want to find
+Step 3: Find the list with file name and directory path that contain the text you searched
+
+#3 - Accidentally deleted file in Visual Studio Code
+// You must remember every file name which you have changed.
+Step 1: Enter Ctrl + Shift + P on VSC
+Step 2: Choose the option "Local History: Find Entry to Restore"
+Step 3: Find the file which you want to restore
+Step 4: Choose a time you save that file
+Step 5: Copy file content and restore it
+
+#4 - Some useful shortcut in VSC
+// 1- Move the selected line Up/Down
+Shortcut 1: ALT + Arrow Up/Down
+// 2 - Copy the selected line Up/Down
+Shortcut 2: ALT + Shift + Arrow Up/Down
+// 3 - Place multiple cursor at any line
+Shortcut 3: ALT + Left Mouse at any line
+// 4 - Copy a line of code without selecting
+Shortcut 4: Place the cursor at the selected line + CTRL + C
+// 5 - Delete a line of code without selecting
+Shortcut 5: Shift + Del
+// 6 - Replace all same text (without matchcase)
+Shortcut 6: CTRL + F2
+
