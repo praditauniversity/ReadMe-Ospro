@@ -84,3 +84,24 @@ Download [Postman](https://www.postman.com/downloads/) atau Buka melalui [Postma
 
 ## Gateway (GraphQL Mesh)
 GraphQL yaitu bahasa yang digunakan untuk query API, yang juga menghubungkan sisi depan website atau client kepada sistem database atau backend untuk melakukan operasi atau kueri seperti menampilkan, menambahkan, menyunting, dan menghapus data.
+
+
+## Instalasi React JS
+Sebelum melakukan instalasi React JS, diperlukan instalasi Node JS terlebih dahulu. Untuk download Node JS dapat menggunakan link pada Tutorial diatas atau dengan menggunakan link berikut [NodeJs](https://nodejs.org/en/download). Setelah selesai install Node JS, diperlukan tahap-tahap berikut untuk melakukan instalasi React JS dengan npm:
+- Cek Versi dari NPM yaitu dengan menggunakan commmand ```npm -v```
+
+  Jika masih belum ada project react JS, anda dapat membuat project react baru dengan tahapan berikut:
+  - Install React dengan mengetik kode: ```npm install -g create-react-app```
+  - Untuk mengecek proses instalasinya, bisa dilakukan dengan mengetik: ```create-react-app –version```
+  - Jika proses instalasi sudah selesai, kamu bisa membuat project React JS pertamamu. Caranya, ketik:
+  ```create-react-app web-react-baru``` (Kamu bisa mengganti “web-react-baru” dengan nama project yang lain) ```cd web-react-baru```
+  - Setelah proses pembuatan projectnya selesai, akan ada halaman web dengan alamat localhost:3000 yang terbuka secara otomatis
+
+- Tahap berikutnya jalankan command: ```npm install``` lalu ```npm start```
+  <details> 
+  <summary>npm install & npm start</summary>
+  
+    - npm install (Perintah ini menginstal semua paket/dependencies apa pun yang bergantung pada project) | Jika npm install tidak berfungsi dengan baik, dapat menambahkan command --legacy-peer-deps setelah npm install (npm install --legacy-peer-deps)
+  
+    - npm start (menjalankan aplikasi / React JS)
+  </details>
