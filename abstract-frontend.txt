@@ -1,0 +1,38 @@
+mf-main - Dependencies/Library
+
+# @babel/core
+= babel/core is a package that is used to compile modern JavaScript code (such as ES6) into code that can run in older browsers or environments that don't support the latest language features. Babel is a popular tool in the JavaScript community, and babel/core is the core package that includes the essential functionality for compiling JavaScript code.
+
+# @headlessui/react
+= headlessui/react is a package that provides a set of completely unstyled, fully accessible React UI components that you can use to build your own custom interfaces. The "headless" in the name refers to the fact that the components don't come with any styles or visual design of their own, leaving you free to apply your own custom styles to achieve the look and feel you want.
+
+# redux
+= Redux is a state management library for JavaScript applications, typically used with the React framework. It helps you manage the state of your application in a predictable way, making it easier to debug, test, and maintain your code over time.
+
+# tailwindcss
+= Tailwind CSS is a utility-first CSS framework that provides a set of pre-defined CSS classes that you can use to quickly style your HTML elements. Unlike traditional CSS frameworks that provide pre-designed components and styles, Tailwind CSS is designed to be highly customizable and flexible, allowing you to create your own unique designs by combining and customizing the pre-defined classes.
+
+# webpack
+= Webpack is a module bundler for JavaScript applications. It takes modules with dependencies and generates a single JavaScript file that can be executed in a web browser or a Node.js environment. Webpack is a powerful tool for bundling and optimizing JavaScript applications, allowing you to manage your dependencies and improve performance in a variety of ways.
+
+# @apollo/client
+= Apollo Client is a powerful and flexible library for managing data and state in web applications. By providing a powerful and flexible query language, along with a variety of tools for managing state, it can help simplify the development of complex web applications and improve performance by reducing the number of network requests required to fetch data. One of the key benefits of using Apollo Client is its ability to work seamlessly with a variety of backend technologies, including REST APIs, GraphQL APIs, and more. It also includes a large ecosystem of plugins and extensions that can be used to extend its functionality and integrate it with other tools and frameworks.
+
+# @fortawesome/fontawesome-free
+= fortawesome/fontawesome is a popular package that provides a collection of free and open source icons for use in web applications. The package is developed by Font Awesome, a company that specializes in creating high-quality icons and icon fonts for use in web and mobile applications. The icons are provided in several different styles, including solid, regular, light, and duotone.
+
+# @heroicons/react
+= Heroicons is a package that provides a collection of free and open source icons for use in React applications. The icons are provided in several different sizes, ranging from 16 pixels to 64 pixels, and are designed to be highly customizable and easy to use. The package is developed by the team at Tailwind Labs, the same company that created the popular Tailwind CSS framework. The @heroicons/react package is intended to be used in conjunction with Tailwind CSS, but can also be used on its own or with other CSS frameworks.
+
+# apexcharts
+= ApexCharts is a JavaScript charting library that allows you to create interactive charts and visualizations for web applications. Apexchart support for real-time updates with powerful customize options by changing the colors, fonts, and other visual properties using CSS and behavior by adding event listeners and hooksthat allow you to respond to user interactions, data updates, and other events. It is built on top of the popular open-source charting library, HighCharts, and provides a simple and easy-to-use API for creating a wide variety of charts, including line charts, area charts, bar charts, pie charts, and more.
+
+# axios
+= Axios is a popular JavaScript library that allows you to make HTTP requests from your web applications. It provides a simple and easy-to-use API that allows you to send requests to REST APIs and other web services, and handle the responses in your application.
+
+# daisyui
+= DaisyUI is a free and open-source UI component library for Tailwind CSS. DaisyUI was designed to make it easier and faster to create modern and responsive user interfaces with Tailwind CSS. It includes a wide variety of components, such as buttons, forms, cards, modals, navbars, and more. Each component is designed to be highly customizable and includes a wide range of configuration options, making it easy to create unique and visually appealing interfaces.
+
+# dhtmlx-gantt
+= DHTMLX Gantt is a powerful JavaScript library for creating interactive Gantt charts and project management tools. It is built using modern web technologies such as HTML5, CSS, and JavaScript, and provides a wide range of features for creating and managing projects and tasks. DHTMLX Gantt provides a variety of features for creating and managing Gantt charts, including the ability to create and edit tasks and subtasks, set start and end dates, assign resources and dependencies, and track progress. It also includes support for drag-and-drop interactions, zooming, and scrolling, as well as a variety of customization options for styling and formatting the chart.
+
