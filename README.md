@@ -117,3 +117,51 @@ GraphQL adalah sebuah bahasa query yang digunakan untuk mengambil dan memanipula
 
 Install GraphQL
 - Jalankan command ```npm install graphql``` atau ```npm install graphql --legacy-peer-deps```
+
+## Tutorial atau Tips untuk ReactJS
+Berikut merupakan tutorial dan juga tips yang dapat berguna untuk mengembangkan project ReactJS anda.
+
+### GraphQL Apollo JWT
+- https://flaviocopes.com/graphql-auth-apollo-jwt-cookies/
+- https://hasura.io/blog/best-practices-of-using-jwt-with-graphql/
+
+### Fragment
+- https://www.apollographql.com/docs/react/data/fragments/
+
+### Cookie
+- https://www.npmjs.com/package/js-cookie
+- https://www.youtube.com/watch?v=YPgMnugXBJo
+- https://medium.com/@ryanchenkie_40935/react-authentication-how-to-store-jwt-in-a-cookie-346519310e81
+
+### React Tutorial
+- [useEffect](https://www.youtube.com/watch?v=bGzanfKVFeU)
+- [useEffect vs useRef](https://blog.logrocket.com/usestate-vs-useref/)
+- [Callback & Promise](https://linuxhint.com/callback-promise-javascript-examples/)
+
+### Write Code Faster
+- https://www.youtube.com/watch?v=ph65TPiNmKo 
+
+### Gantt Chart
+  #### Create React Gantt Chart
+  - https://www.youtube.com/watch?v=AVRHgXQ0g_k
+  - https://dhtmlx.com/blog/create-react-gantt-chart-component-dhtmlxgantt/
+
+  #### Specify Column Gantt Chart
+  - https://www.youtube.com/watch?v=-BoznxJmJIo
+
+  #### Setting up Scale Gantt
+  - https://docs.dhtmlx.com/gantt/desktop__configuring_time_scale.html#timeunits
+
+  #### Custom DHTMLX Add Input
+  - https://docs.dhtmlx.com/gantt/desktop__custom_editor.html
+
+  #### add Scurve
+  - https://dhtmlx.com/blog/dhtmlxgantt-6-1-time-constraints-backward-scheduling-s-curve/
+
+  #### add custom element
+  - https://dhtmlx.com/blog/add-custom-elements-grid-javascript-gantt-dhtmlx-gantt-video-tutorial/
+  - https://docs.dhtmlx.com/gantt/desktop__custom_editor.html
+
+
+### GraphQL - Apollo Client
+- https://www.youtube.com/watch?v=YyUWW04HwKY
