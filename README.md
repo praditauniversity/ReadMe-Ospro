@@ -101,7 +101,19 @@ Sebelum melakukan instalasi React JS, diperlukan instalasi Node JS terlebih dahu
   <details> 
   <summary>npm install & npm start</summary>
   
-    - npm install (Perintah ini menginstal semua paket/dependencies apa pun yang bergantung pada project) | Jika npm install tidak berfungsi dengan baik, dapat menambahkan command --legacy-peer-deps setelah npm install (npm install --legacy-peer-deps)
+    - ```npm install``` (Perintah ini menginstal semua paket/dependencies apa pun yang bergantung pada project) | Jika ```npm install``` tidak berfungsi dengan baik, dapat menambahkan command ```--legacy-peer-deps``` setelah ```npm install``` seperti berikut ini: ```npm install --legacy-peer-deps```
   
-    - npm start (menjalankan aplikasi / React JS)
+    - ```npm start``` (menjalankan aplikasi / React JS)
   </details>
+
+
+## Instalasi Apollo Client & Graph QL
+Apollo Client adalah pustaka manajemen status komprehensif untuk JavaScript yang memungkinkan Anda mengelola data lokal dan jarak jauh dengan GraphQL. Apollo Client digunakan untuk mengambil, meng-cache, dan memodifikasi data aplikasi, sambil memperbarui UI Anda secara otomatis. Berikut dokumentasi [Apollo Client](https://www.apollographql.com/docs/react/)
+
+Install Apollo Client
+- Jalankan command ```npm install @apollo/client``` atau ```npm install @apollo/client --legacy-peer-deps```
+
+GraphQL adalah sebuah bahasa query yang digunakan untuk mengambil dan memanipulasi data. Dalam GraphQL, klien dapat mengirimkan permintaan spesifik yang mencakup data yang diperlukan. Ini memungkinkan klien untuk mendapatkan data yang tepat yang mereka inginkan, menghindari masalah over-fetching (mengambil data yang tidak diperlukan) atau under-fetching (mengambil data yang kurang). GraphQL menggunakan skema yang didefinisikan dengan jelas untuk mendefinisikan tipe data yang tersedia dan operasi yang dapat dilakukan pada data tersebut. Berikut dokumentasi [GraphQL](https://graphql.org/code/)
+
+Install GraphQL
+- Jalankan command ```npm install graphql``` atau ```npm install graphql --legacy-peer-deps```
