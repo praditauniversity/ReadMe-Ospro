@@ -118,7 +118,7 @@ GraphQL adalah sebuah bahasa query yang digunakan untuk mengambil dan memanipula
 Install GraphQL
 - Jalankan command ```npm install graphql``` atau ```npm install graphql --legacy-peer-deps```
 
-## Tutorial atau Tips untuk ReactJS
+## Tutorial & Tips untuk ReactJS
 Berikut merupakan tutorial dan juga tips yang dapat berguna untuk mengembangkan project ReactJS anda.
 
 ### GraphQL Apollo JWT
