@@ -95,7 +95,7 @@ Untuk dokumentasi flow API testing OSPRO, dapat dilihat di [Flow Test](https://g
 
 ## GraphQL Mesh (Gateway)
 GraphQL yaitu bahasa yang digunakan untuk query API, yang juga menghubungkan sisi depan website atau client kepada sistem database atau backend untuk melakukan operasi atau kueri seperti menampilkan, menambahkan, menyunting, dan menghapus data.
-> [GraphQL Mesh as a Gateway](https://www.youtube.com/watch?v=fhTg5wPU5LY)
+> [GraphQL Mesh as a Gateway](https://www.youtube.com/watch?v=fhTg5wPU5LY) <br>
 > [Informasi Selengkapnya lihat di repo Gateway](https://github.com/praditauniversity/gateway/README.md)
 
 ## Instalasi React JS (Frontend)
