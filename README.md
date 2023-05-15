@@ -627,3 +627,4 @@ Untuk mau bertanya tanya tentang project ini we are very welcome kontak email ka
 
 ### Frontend
 - Christoper Jordan (christoper.jordan@student.pradita.ac.id)
+- Phance Karyadi (phance.karyadi@student.pradita.ac.id)
