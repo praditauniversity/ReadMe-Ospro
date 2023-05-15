@@ -97,6 +97,423 @@ Untuk dokumentasi flow API testing OSPRO, dapat dilihat di [Flow Test](https://g
 GraphQL yaitu bahasa yang digunakan untuk query API, yang juga menghubungkan sisi depan website atau client kepada sistem database atau backend untuk melakukan operasi atau kueri seperti menampilkan, menambahkan, menyunting, dan menghapus data.
 > [GraphQL Mesh as a Gateway](https://www.youtube.com/watch?v=fhTg5wPU5LY)
 
+# Query Graphql 
+Query dalam menampilkan, menambahkan, menyunting, dan menghapus data pada Graphql
+Menampilkan Graphql pada postman
+query project { 
+    project {
+        Data {
+            ID
+            name
+            description
+            user_id
+            progress_percentage
+            budget_health
+            cost_actual
+            cost_plan
+            budget
+            project_objectives
+            potential_risk
+            start_project
+            end_project
+            participants
+            project_duration
+            total_man_power
+        }
+    }
+} 
+
+Menambahkan data melalui graphql pada postman
+mutation addProject(
+    $status: String!
+    $work_area: String!
+    $start_project: DateTime!
+    $stakeholder_ammount: Int!
+    $role_id: Int!
+    $type_id: Int!
+    $considered_success_when: String!
+    $cost_actual: Float!
+    $cost_plan: Float!
+    $client: String!
+    $client_contact: String!
+    $currency_name: String!
+    $currency_code: String!
+    $currency_symbol: String!
+    $description: String!
+    $end_project: DateTime!
+    $name: String!
+    $office_location: String!
+    $phase_id: Int!
+    $potential_risk: [String]!
+    $total_man_power: Int!
+    $project_objectives: [String]!
+    $progress_percentage: Float!
+    $budget: Int!
+    $participants: Int!
+    $available_resources:[String]!
+    $milestone_id: Int!
+) {
+  addProject(
+    input: {
+    status: $status
+    work_area: $work_area
+    start_project: $start_project
+    stakeholder_ammount: $stakeholder_ammount
+        role_id: $role_id
+        type_id: $type_id
+        considered_success_when: $considered_success_when
+        cost_actual: $cost_actual
+        cost_plan: $cost_plan
+        client: $client
+        client_contact: $client_contact
+        currency_name: $currency_name
+        currency_code: $currency_code
+        currency_symbol: $currency_symbol
+        description: $description
+        end_project: $end_project
+        name: $name
+        office_location: $office_location
+        phase_id: $phase_id
+        potential_risk: $potential_risk
+        total_man_power: $total_man_power
+        project_objectives: $project_objectives
+        progress_percentage: $progress_percentage
+        budget: $budget
+      participants: $participants,
+      available_resources: $available_resources,
+      milestone_id: $milestone_id
+    }
+  ) {
+    Data {
+        ID
+        participants
+        available_resources
+        milestone_id
+    }
+  }
+}
+
+Untuk dapat mengganti data liat pada postman kemudian lihat pada graphql variabel
+di bawah ini adalah data yang akan di insert
+{
+    "status" :"None",
+    "work_area":"Tangerang",
+    "start_project":"2023-01-05T11:04:48.377+07:00",
+    "stakeholder_ammount":100,
+    "role_id":10,
+    "type_id":2,
+    "considered_success_when": "All is Done",
+    "cost_actual":8.8,
+    "cost_plan":6.7,
+    "client": "stephen",
+    "name": "Project S",
+    "total_man_power": 300,
+    "client_contact":"082222",
+    "currency_name": "Indonesian Rupiahs",
+    "currency_code": "IDR",
+    "currency_symbol": "IDR",
+    "description": "A Project of anomaly",
+    "end_project": "2023-03-13T11:04:48.377+07:00",
+    "office_location": "Other Dimesions",
+    "phase_id": 2,
+    "potential_risk":["good","bad"],
+    "project_objectives":["Good","BAD"],
+    "progress_percentage": 10.5,
+    "budget": 56000,
+    "participants": 17,
+    "available_resources":["lab","kom"],
+    "milestone_id": 2
+}
+
+Melakukan Update pada graphql pada postman
+Diambil dengan ID Project yang mau di update
+mutation updateProject (
+    $id: String!
+    $name: String!,
+    $description: String!,
+    $status :String!,
+    $work_area :String!,
+    $start_project :DateTime,
+    $stakeholder_ammount : Int!,
+    $role_id : Int!,
+    $type_id: Int!,
+    $considered_success_when:String!,
+    $cost_actual:Float!,
+    $cost_plan :Float!,
+    $client : String!,
+    $client_contact:String!,
+    $currency_name:String!,
+    $currency_code : String!,
+    $currency_symbol :String!,
+    $end_project : DateTime,
+    $office_location : String!,
+    $phase_id: Int!
+    $potential_risk : [String]!,
+    $project_objectives:[String]!,
+    $progress_percentage: Float!,
+    $budget:Int!,
+    $total_man_power:Int!,
+    $available_resources:[String]!,
+    $participants: Int!
+    ) {
+  updateProject( id: $id
+  input:{
+      name: $name,
+      description: $description,
+      status: $status, 
+      work_area: $work_area, 
+      start_project: $start_project,
+      stakeholder_ammount: $stakeholder_ammount,
+      role_id: $role_id,
+      type_id: $type_id,
+      considered_success_when: $considered_success_when,
+      cost_actual: $cost_actual,
+      cost_plan: $cost_plan,
+      client:$client,
+      client_contact:$client_contact,
+      currency_name: $currency_name,
+      currency_code: $currency_code,
+      currency_symbol: $currency_symbol,
+      end_project: $end_project,
+      office_location: $office_location,
+      phase_id: $phase_id,
+      potential_risk: $potential_risk,
+      project_objectives: $project_objectives,
+      progress_percentage: $progress_percentage,
+      budget: $budget,
+      total_man_power: $total_man_power,
+      participants: $participants,
+      available_resources: $available_resources
+  }
+  ) {
+    Data {
+        ID
+        name
+        description
+    }
+  }
+}
+Data yang perlu untuk menggantikan isi data pada id 1
+Dibawah ini adalah variabel graphql
+{
+    "id": "1",
+    "stakeholder_ammount": 1000,
+  "name": "Win Pro",
+  "start_project":"2022-10-20T04:04:48.377Z",
+  "end_project":"2022-10-20T04:04:48.377Z",
+  "work_area":"jakarta",
+  "office_location":"gedung 1",
+  "cost_plan":10.23,
+  "cost_actual":10.11,
+  "client":"stephen",
+  "client_contact":"081222022",
+  "company":"testing",
+  "role_id":1,
+  "progress_percentage":30.10,
+  "description": "Material is needed to create an anomaly.",
+  "total_man_power":200,
+  "status":"working",
+  "project_objectives": ["make everything good", "increase efficiency"],
+  "considered_success_when":"all good",
+  "potential_risk": ["deadline late", "engagement failure", "run of budget"],
+  "currency_symbol":"$",
+  "currency_code":"$",
+  "currency_name":"dollar",
+  "phase_id":1,
+  "type_id": 1,
+  "budget": 300000,
+    "available_resources":["lab","lala"],
+    "participants": 17
+}
+
+Melakukan Delete pada graphql melalui postman
+mutation deleteProject {
+  deleteProject(id: "1")
+}
+
+## Gateway
+Pada kodingan gateway untuk dapat menjalankan graphql jika mau menambahkan mutation atau query baru perlu dilakukannya 
+Buat lah File yang diletakan pada src/json-schemas
+lalu buat file yang ingin anda buat cth seperti activity
+kemudian day ini buatlah 2 file json yang diperlukan yaitu request dan response 
+request dan response biasa diambil dari query postman pada local tanpa menggunakan graphql
+cth activity-request.json 
+{
+    "parent_id": 0,
+    "gantt_id" : 1,
+    "name": "zakhira",
+    "description": "Material is needed to create an anomaly.",
+    "start_time": "2022-08-09T04:04:48.377Z",
+    "end_time": "2022-10-20T04:04:48.377Z",
+    "weight_percentage": 50.01,
+    "progress_percentage": 50.01,
+    "priority": "high",
+    "cost_plan": 100000.01,
+    "cost_actual": 100000.01,
+    "material_cost_plan": 100000.01,
+    "material_cost_actual": 100000.01,
+    "tool_cost_plan": 100000.01,
+    "tool_cost_actual": 100000.01,
+    "human_cost_plan": 100000.01,
+    "human_cost_actual": 100000.01,
+    "activity_type": "manoverpowered",
+    "phase_id": 1,
+    "unitofmeasurement_id": 1
+}
+
+Untuk membuat activity response maka response ketika kita sudah berhasil melakukan query tersebut seperti 
+{
+    "data": [
+        {
+            "ID": 1,
+            "CreatedAt": "2023-01-25T17:35:00.73698+07:00",
+            "UpdatedAt": "2023-01-25T17:35:00.73698+07:00",
+            "DeletedAt": null,
+            "parent_id": 0,
+            "name": "Wepytypur",
+            "description": "Material is needed to create an anomaly.",
+            "gantt_id": 1,
+            "start_time": "2023-01-17T11:04:48.377+07:00",
+            "end_time": "2023-02-19T11:04:48.377+07:00",
+            "activity_duration": 33,
+            "user_id": "dc9076bb-2fda-4019-bd2c-900a8284b9bb",
+            "updated_by": "",
+            "deleted_by": "",
+            "cost_actual": 1.3,
+            "cost_plan": 1.3,
+            "weight_percentage": 5.3,
+            "progress_percentage": 5.3,
+            "priority": "High",
+            "material_cost_plan": 1.3,
+            "material_cost_actual": 1.3,
+            "tool_cost_plan": 1.3,
+            "tool_cost_actual": 1.3,
+            "human_cost_plan": 1.3,
+            "human_cost_actual": 1.3,
+            "activity_type": "overmantu",
+            "phase_id": 1,
+            "phase": {
+                "ID": 1,
+                "CreatedAt": "2023-01-25T17:30:47.322461+07:00",
+                "UpdatedAt": "2023-01-25T17:30:47.322461+07:00",
+                "DeletedAt": null,
+                "name": "Todo",
+                "color": "#E54C00",
+                "order": 77,
+                "user_id": "dc9076bb-2fda-4019-bd2c-900a8284b9bb",
+                "updated_by": "",
+                "deleted_by": ""
+            },
+            "unitofmeasurement_id": 1,
+            "unitofmeasurement": {
+                "ID": 1,
+                "CreatedAt": "2023-01-25T17:29:19.999294+07:00",
+                "UpdatedAt": "2023-01-25T20:10:52.489524+07:00",
+                "DeletedAt": null,
+                "name": "Human",
+                "description": "Material is needed to create an anomaly.",
+                "user_id": "dc9076bb-2fda-4019-bd2c-900a8284b9bb",
+                "updated_by": "SUp3R4Dm1n",
+                "deleted_by": ""
+            }
+        }
+    ]
+}
+
+Kemudian tahap selanjutnya masuk ke meshrc.yml
+buat lah activity seperti ini 
+- name: activity (nama dari microservice atau querynya)
+    handler:
+      jsonSchema:
+        baseUrl: http://localhost:1007/api/v1/ (nama dari api microservice)
+        schemaHeaders:
+          Authorization: "{context.headers['authorization']}" (code jwt token untuk auhorization)
+        operationHeaders:
+          Authorization: "{context.headers['authorization']}"(code jwt token untuk auhorization)
+
+operations:
+          - type: Query
+            field: activity
+            path: /activity/{args.id}
+            method: GET
+            argTypeMap:
+              id:
+                type: string
+            responseSample: ./src/json-schemas/activity/activity-response.json
+        untuk operation di atas yang mengartikan metode get dengan query yang mengambil data activity
+
+Untuk operation add,update dan delete lihat di bawah ini 
+type: Mutation
+            field: addActivity
+            path: /activity
+            method: POST
+            requestSample: ./src/json-schemas/activity/activity-request.json
+            responseSample: ./src/json-schemas/activity/activity-response.json
+          - type: Mutation
+            field: updateActivity
+            path: /activity/{args.id}
+            method: PUT
+            argTypeMap:
+              id:
+                type: string
+                nullable: false
+            requestSample: ./src/json-schemas/activity/activity-request.json
+            responseSample: ./src/json-schemas/activity/activity-response.json
+          - type: Mutation
+            field: deleteActivity
+            path: /activity/{args.id}
+            method: DELETE
+            argTypeMap:
+              id:
+                type: string
+                nullable: false
+Typenya berubah menjadi mutation lalu gunakan metode seusai dengan fungsinya ingat selalu samakan request dan response jika itu 2 hal salah maka sering terjadi 
+error pada bagian tersebut CTH
+pada data request ada data sebanyak ini 
+{
+    "parent_id": 0,
+    "gantt_id" : 1,
+    "name": "zakhira",
+    "description": "Material is needed to create an anomaly.",
+    "start_time": "2022-08-09T04:04:48.377Z",
+    "end_time": "2022-10-20T04:04:48.377Z",
+    "weight_percentage": 50.01,
+    "progress_percentage": 50.01,
+    "priority": "high",
+    "cost_plan": 100000.01,
+    "cost_actual": 100000.01,
+    "material_cost_plan": 100000.01,
+    "material_cost_actual": 100000.01,
+    "tool_cost_plan": 100000.01,
+    "tool_cost_actual": 100000.01,
+    "human_cost_plan": 100000.01,
+    "human_cost_actual": 100000.01,
+    "activity_type": "manoverpowered",
+    "phase_id": 1,
+    "unitofmeasurement_id": 1
+}
+namun pada response ada data seperti ini 
+{
+    "data": [
+        {
+            "ID": 1,
+            "CreatedAt": "2023-01-25T17:35:00.73698+07:00",
+            "UpdatedAt": "2023-01-25T17:35:00.73698+07:00",
+            "DeletedAt": null,
+            "parent_id": 0,
+            "name": "Wepytypur",
+            "description": "Material is needed to create an anomaly.",
+            "gantt_id": 1,
+            "start_time": "2023-01-17T11:04:48.377+07:00",
+            "end_time": "2023-02-19T11:04:48.377+07:00",
+            "activity_duration": 33
+                 }
+    ]
+}
+Maka Data tidak akan di akses karna data yang kurang
+
+pastikan juga dalam sebelum penulisan response {} kurung kurawal paling awal sebelum memulai data dan pastikan isi data menggunakan lambang [].
+
 ## Instalasi React JS (Frontend)
 Sebelum melakukan instalasi React JS, diperlukan instalasi Node JS terlebih dahulu. Untuk download Node JS dapat menggunakan link pada Tutorial diatas atau dengan menggunakan link berikut [NodeJs](https://nodejs.org/en/download). Setelah selesai install Node JS, diperlukan tahap-tahap berikut untuk melakukan instalasi React JS dengan npm:
 - Cek Versi dari NPM yaitu dengan menggunakan commmand ```npm -v```
@@ -176,3 +593,7 @@ Berikut merupakan tutorial dan juga tips yang dapat berguna untuk mengembangkan 
 
 ### GraphQL - Apollo Client
 - https://www.youtube.com/watch?v=YyUWW04HwKY
+
+## Selamat Mencoba salam kami dari angakatan 19 dan 21 yang membuat project ini Kami harap kalian mendapatkan pengalaman yang banyak setelah melakukan pengerjaan aplikasi ini Good luck and wish you all the best 
+Untuk mau bertanya tanya tentang project ini we are very welcome kontak email kami :
+Stephen Winata (stephenwinata23@gmail.com)
