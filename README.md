@@ -100,6 +100,7 @@ GraphQL yaitu bahasa yang digunakan untuk query API, yang juga menghubungkan sis
 # Query Graphql 
 Query dalam menampilkan, menambahkan, menyunting, dan menghapus data pada Graphql
 Menampilkan Graphql pada postman
+```bash
 query project { 
     project {
         Data {
@@ -122,8 +123,10 @@ query project {
         }
     }
 } 
+```
 
 Menambahkan data melalui graphql pada postman
+```bash
 mutation addProject(
     $status: String!
     $work_area: String!
@@ -192,9 +195,11 @@ mutation addProject(
     }
   }
 }
+```
 
 Untuk dapat mengganti data liat pada postman kemudian lihat pada graphql variabel
 di bawah ini adalah data yang akan di insert
+```bash
 {
     "status" :"None",
     "work_area":"Tangerang",
@@ -224,9 +229,11 @@ di bawah ini adalah data yang akan di insert
     "available_resources":["lab","kom"],
     "milestone_id": 2
 }
+```
 
 Melakukan Update pada graphql pada postman
 Diambil dengan ID Project yang mau di update
+```bash
 mutation updateProject (
     $id: String!
     $name: String!,
@@ -293,8 +300,10 @@ mutation updateProject (
     }
   }
 }
+```
 Data yang perlu untuk menggantikan isi data pada id 1
 Dibawah ini adalah variabel graphql
+```bash
 {
     "id": "1",
     "stakeholder_ammount": 1000,
@@ -325,11 +334,14 @@ Dibawah ini adalah variabel graphql
     "available_resources":["lab","lala"],
     "participants": 17
 }
+```
 
 Melakukan Delete pada graphql melalui postman
+```bash
 mutation deleteProject {
   deleteProject(id: "1")
 }
+```
 
 ## Gateway
 Pada kodingan gateway untuk dapat menjalankan graphql jika mau menambahkan mutation atau query baru perlu dilakukannya 
@@ -337,6 +349,7 @@ Buat lah File yang diletakan pada src/json-schemas
 lalu buat file yang ingin anda buat cth seperti activity
 kemudian day ini buatlah 2 file json yang diperlukan yaitu request dan response 
 request dan response biasa diambil dari query postman pada local tanpa menggunakan graphql
+```bash
 cth activity-request.json 
 {
     "parent_id": 0,
@@ -360,8 +373,10 @@ cth activity-request.json
     "phase_id": 1,
     "unitofmeasurement_id": 1
 }
+```
 
 Untuk membuat activity response maka response ketika kita sudah berhasil melakukan query tersebut seperti 
+```bash
 {
     "data": [
         {
@@ -419,9 +434,11 @@ Untuk membuat activity response maka response ketika kita sudah berhasil melakuk
         }
     ]
 }
+```
 
 Kemudian tahap selanjutnya masuk ke meshrc.yml
 buat lah activity seperti ini 
+```bash
 - name: activity (nama dari microservice atau querynya)
     handler:
       jsonSchema:
@@ -430,7 +447,8 @@ buat lah activity seperti ini
           Authorization: "{context.headers['authorization']}" (code jwt token untuk auhorization)
         operationHeaders:
           Authorization: "{context.headers['authorization']}"(code jwt token untuk auhorization)
-
+```
+```bash
 operations:
           - type: Query
             field: activity
@@ -441,8 +459,10 @@ operations:
                 type: string
             responseSample: ./src/json-schemas/activity/activity-response.json
         untuk operation di atas yang mengartikan metode get dengan query yang mengambil data activity
+```
 
 Untuk operation add,update dan delete lihat di bawah ini 
+```bash
 type: Mutation
             field: addActivity
             path: /activity
@@ -467,9 +487,11 @@ type: Mutation
               id:
                 type: string
                 nullable: false
+```
 Typenya berubah menjadi mutation lalu gunakan metode seusai dengan fungsinya ingat selalu samakan request dan response jika itu 2 hal salah maka sering terjadi 
 error pada bagian tersebut CTH
 pada data request ada data sebanyak ini 
+```bash
 {
     "parent_id": 0,
     "gantt_id" : 1,
@@ -492,7 +514,9 @@ pada data request ada data sebanyak ini
     "phase_id": 1,
     "unitofmeasurement_id": 1
 }
+```
 namun pada response ada data seperti ini 
+```bash
 {
     "data": [
         {
@@ -510,6 +534,7 @@ namun pada response ada data seperti ini
                  }
     ]
 }
+```
 Maka Data tidak akan di akses karna data yang kurang
 
 pastikan juga dalam sebelum penulisan response {} kurung kurawal paling awal sebelum memulai data dan pastikan isi data menggunakan lambang [].
