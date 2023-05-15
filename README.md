@@ -621,4 +621,9 @@ Berikut merupakan tutorial dan juga tips yang dapat berguna untuk mengembangkan 
 
 ## Selamat Mencoba salam kami dari angakatan 19 dan 21 yang membuat project ini Kami harap kalian mendapatkan pengalaman yang banyak setelah melakukan pengerjaan aplikasi ini Good luck and wish you all the best 
 Untuk mau bertanya tanya tentang project ini we are very welcome kontak email kami :
-Stephen Winata (stephenwinata23@gmail.com)
+
+### Backend
+- Stephen Winata (stephenwinata23@gmail.com)
+
+### Frontend
+- Christoper Jordan (christoper.jordan@student.pradita.ac.id)
