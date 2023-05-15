@@ -11,17 +11,16 @@ Repository pada github untuk aplikasi ospro dibagi menjadi tiga yaitu Backend, G
 - Repository Gateway : [gateway](https://github.com/praditauniversity/gateway)
 - Repository Frontend : [mf-main](https://github.com/praditauniversity/mf-main)
 
-Lakukanlah penarikan pada repositori-repositori di atas untuk menjalakan aplikasi OSPRO. Dapat dilakukan melalui [GitHub Desktop](https://desktop.github.com/) atau [GitHub di command line](https://cli.github.com/).
+Lakukanlah penarikan pada repositori-repositori di atas untuk menjalankan aplikasi OSPRO. Dapat dilakukan melalui [GitHub Desktop](https://desktop.github.com/) atau [GitHub di command line](https://cli.github.com/).
 
-Setelah melakukan penarikan pada repository yang sudah disebut lakukan langkah selanjutnya yaitu instalasi [Docker](https://www.docker.com/), [Golang](https://docs.studygolang.com/doc/install), [NodeJs](https://nodejs.org/en/download)
+Setelah melakukan penarikan pada repository yang sudah disebut lakukan langkah selanjutnya yaitu instalasi [Docker](https://www.docker.com/), [Golang](https://docs.studygolang.com/doc/install), [PostgreSQL](https://www.postgresql.org/download/), [NodeJs](https://nodejs.org/en/download).
 
 
 ## Instalasi Docker
-Download docker pada link ini https://www.docker.com/ pilih lah sesuai dengan sistem operasi yang anda gunakan seperti windows atau linux
-jika anda menginstal menggunakan windows anda perlu melakukan beberapa langkah lagi untuk dapat menjalankan docker 
+Download [Docker](https://www.docker.com/), pilih lah sesuai dengan sistem operasi yang anda gunakan seperti windows atau linux
+jika anda menginstall menggunakan windows anda perlu melakukan beberapa langkah lagi untuk dapat menjalankan docker 
 pergi menuju microsoft store kemudian cari alpine setelah itu carilah aplikasi yang bernama Alpine WSL kemudian download 
-atau lalu ikuti tutorial di bawah ini 
-https://www.petanikode.com/docker-install/
+atau lalu ikuti tutorial di [Install Docker](https://www.petanikode.com/docker-install/)
 
 ## How to Build Docker Image dan Run Docker  
 Buka visual studio code lalu buka folder ms-project atau ms lainnya 
@@ -30,7 +29,7 @@ lalu pada command prompt tuliskan ```docker compose up --build``` (artinya membu
 Untuk melakukan docker berjalan pada background application lakukan ```docker compose up --build -d``` (artinya mem-build docker image dan melakukan running pada aplikasi docker dilakukan pada background aplikasi).
 Untuk mematikan docker yang sedang berjalan lakukan ```docker compose down```. 
 Untuk menghilangkan seluruh data aplikasi beserta database di docker lakukan ```docker compose down -v```. 
-Lakukan setiap hal ini pada semua microservice, gateway, frontend yang ingin di jalankan
+Lakukan setiap hal ini pada semua microservice, gateway, frontend yang ingin dijalankan.
 
 ## How to Remove Unused Docker
 ```bash
@@ -56,37 +55,49 @@ docker volume ls -q -f "dangling=true"
 docker volume rm $(docker volume ls -q -f "dangling=true")
 ```
 
-## Golang Tutorial
+## Golang Tutorial (Backend)
 Dalam setiap repositori proyek, diimplementasikan Clean Architecture yaitu merupakan pola desain perangkat lunak dengan memisahkan lapisan presentasi, lapisan domain, dan lapisan data, sehingga menjadi lebih mudah dalam memodifikasi dan memperluas kode tanpa menambahkan kompleksitas yang tidak perlu. Clean Architecture yang diterapkan dalam proyek ini terdiri dari 4 layer, yaitu models, repositories, services, dan controllers.
+
 ![clean_architecture](https://github.com/praditauniversity/ReadMe-Ospro/assets/110759186/f73f42a6-f33f-4a22-ac11-4ebce0673e84)
+
 - Models layer: tempat untuk menginisiasi nama kolom beserta tipe data dan relasinya dengan kolom lain dalam database. 
 - Repository layer: lapisan yang mengoperasikan kueri untuk penyimpanan dan pengambilan data dengan terhubung langsung ke dalam database. 
 - Service layer: tempat untuk memvalidasi request yang dikirimkan client ke dalam sistem aplikasi dan tempat dimana semua business logic berada. 
 - Controller layer: lapisan yang menerima request dari client dan memberikan fungsionalitas yang diperlukan berdasarkan autentikasi tertentu.
 
 Tiap repositori proyek yang telah dibuat akan di deploy menggunakan Docker menjadi beberapa [container](https://www.docker.com/resources/what-container/). Tiap Docker container memiliki dua Docker images didalamnya, yaitu fungsi aplikasi dan basis data aplikasi. Lalu untuk komunikasi antar microservices, menggunakan protokol REST API dengan port tertentu yang telah di inisiasi dalam masing-masing repositori proyek (dapat dilihat dalam .env di tiap repo).
-> [Go commands](https://dasarpemrogramangolang.novalagung.com/A-go-command.html)<br>
 > [CRUD API in Golang](https://www.youtube.com/watch?v=lf_kiH_NPvM)<br>
 > [JWT Authentication in Golang](https://www.youtube.com/watch?v=ma7rUS_vW9M)<br>
 > [Dependency Injection in Golang](https://www.youtube.com/watch?v=dZ8Ir4Gc8D0&t=137s)<br>
 > [Unit Test in Golang](https://www.youtube.com/watch?v=t9QJPE5vwhs&t=1414s)<br>
 > [Tutorial membuat web API Golang (FULL)](https://www.youtube.com/watch?v=GjI0GSvmcSU&t=1s)<br>
 
+Jalankan ```go mod tidy``` untuk memvalidasi dependensi (yang ada pada file go.mod). Jika ada dependensi yang belum ter-download, maka akan otomatis di-download. Selengkapnya dapat dilihat di [Go commands](https://dasarpemrogramangolang.novalagung.com/A-go-command.html)
+
 Untuk membuat repositori untuk microservice baru, dapat mengikuti template project di [Project Template](https://github.com/praditauniversity/ms-scaffold)
 
 ## Postman
 Download [Postman](https://www.postman.com/downloads/) atau Buka melalui [Postman Web](https://web.postman.co/home)
+
+Untuk mengakses Workspace OSPRO
 <details> 
   <summary>Sign in with Google Account</summary>
   Gmail: livelycomet@gmail.com <br>
   Password: SmartLiving#123
 </details>
 
-## Gateway (GraphQL Mesh)
+Kemudian pilih Workspace yang bernama Living Comet, anda dapat melihat api test untuk tiap microservice pada sidebar collections atau juga pada sidebar APIs di folder ospro.
+
+> [Testing REST APIs using Postman and Newman](https://dev.to/sivalabs/testing-rest-apis-using-postman-and-newman-1hhp)
+
+Untuk tata cara penulisan tests script di Postman, dapat dilihat di [Writing Tests](https://learning.postman.com/docs/writing-scripts/test-scripts/) <br>
+Untuk dokumentasi flow API testing OSPRO, dapat dilihat di [Flow Test](https://github.com/praditauniversity/flow-test-reports)
+
+## GraphQL Mesh (Gateway)
 GraphQL yaitu bahasa yang digunakan untuk query API, yang juga menghubungkan sisi depan website atau client kepada sistem database atau backend untuk melakukan operasi atau kueri seperti menampilkan, menambahkan, menyunting, dan menghapus data.
+> [GraphQL Mesh as a Gateway](https://www.youtube.com/watch?v=fhTg5wPU5LY)
 
-
-## Instalasi React JS
+## Instalasi React JS (Frontend)
 Sebelum melakukan instalasi React JS, diperlukan instalasi Node JS terlebih dahulu. Untuk download Node JS dapat menggunakan link pada Tutorial diatas atau dengan menggunakan link berikut [NodeJs](https://nodejs.org/en/download). Setelah selesai install Node JS, diperlukan tahap-tahap berikut untuk melakukan instalasi React JS dengan npm:
 - Cek Versi dari NPM yaitu dengan menggunakan commmand ```npm -v```
 
@@ -101,13 +112,13 @@ Sebelum melakukan instalasi React JS, diperlukan instalasi Node JS terlebih dahu
   <details> 
   <summary>npm install & npm start</summary>
   
-    - ```npm install``` (Perintah ini menginstal semua paket/dependencies apa pun yang bergantung pada project) | Jika ```npm install``` tidak berfungsi dengan baik, dapat menambahkan command ```--legacy-peer-deps``` setelah ```npm install``` seperti berikut ini: ```npm install --legacy-peer-deps```
+    - ```npm install``` (Perintah ini menginstall semua paket/dependencies apa pun yang bergantung pada project) | Jika ```npm install``` tidak berfungsi dengan baik, dapat menambahkan command ```--legacy-peer-deps``` setelah ```npm install``` seperti berikut ini: ```npm install --legacy-peer-deps```
   
     - ```npm start``` (menjalankan aplikasi / React JS)
   </details>
 
 
-## Instalasi Apollo Client & Graph QL
+## Instalasi Apollo Client & GraphQL
 Apollo Client adalah pustaka manajemen status komprehensif untuk JavaScript yang memungkinkan Anda mengelola data lokal dan jarak jauh dengan GraphQL. Apollo Client digunakan untuk mengambil, meng-cache, dan memodifikasi data aplikasi, sambil memperbarui UI Anda secara otomatis. Berikut dokumentasi [Apollo Client](https://www.apollographql.com/docs/react/)
 
 Install Apollo Client
