@@ -15,6 +15,9 @@ Lakukanlah penarikan pada repositori-repositori di atas untuk menjalankan aplika
 
 Setelah melakukan penarikan pada repository yang sudah disebut lakukan langkah selanjutnya yaitu instalasi [Docker](https://www.docker.com/), [Golang](https://docs.studygolang.com/doc/install), [PostgreSQL](https://www.postgresql.org/download/), [NodeJs](https://nodejs.org/en/download).
 
+Install docker image berikut:
+- [postgres](https://hub.docker.com/_/postgres), atau [How To Install and Run PostgreSQL using Docker](https://dev.to/shree_j/how-to-install-and-run-psql-using-docker-41j2)
+
 Selanjutnya pada tiap repository backend, jalankan:
 - ```go mod tidy``` untuk memvalidasi dependensi (yang ada pada file go.mod).
 - ```docker compose up --build``` atau ```docker compose up --build -d``` (artinya membuild image docker dan melakukan running pada aplikasi docker).
