@@ -15,6 +15,18 @@ Lakukanlah penarikan pada repositori-repositori di atas untuk menjalankan aplika
 
 Setelah melakukan penarikan pada repository yang sudah disebut lakukan langkah selanjutnya yaitu instalasi [Docker](https://www.docker.com/), [Golang](https://docs.studygolang.com/doc/install), [PostgreSQL](https://www.postgresql.org/download/), [NodeJs](https://nodejs.org/en/download).
 
+Selanjutnya pada tiap repository backend, jalankan:
+- ```go mod tidy``` untuk memvalidasi dependensi (yang ada pada file go.mod).
+- ```docker compose up --build``` atau ```docker compose up --build -d``` (artinya membuild image docker dan melakukan running pada aplikasi docker).
+
+Pada repository gateway, jalankan:
+- ```npm install``` (Perintah ini menginstall semua paket/dependencies apa pun yang bergantung pada project) | Jika ```npm install``` tidak berfungsi dengan baik, dapat menambahkan command ```--legacy-peer-deps``` setelah ```npm install``` seperti berikut ini: ```npm install --legacy-peer-deps```
+- ```docker compose up --build``` atau ```docker compose up --build -d``` (artinya membuild image docker dan melakukan running pada aplikasi docker).
+
+Pada repository frontend, jalankan:
+- ```npm install``` (Perintah ini menginstall semua paket/dependencies apa pun yang bergantung pada project) | Jika ```npm install``` tidak berfungsi dengan baik, dapat menambahkan command ```--legacy-peer-deps``` setelah ```npm install``` seperti berikut ini: ```npm install --legacy-peer-deps```
+- ```docker compose up --build``` atau ```docker compose up --build -d``` (artinya membuild image docker dan melakukan running pada aplikasi docker).
+
 
 ## Instalasi Docker
 Download [Docker](https://www.docker.com/), pilih lah sesuai dengan sistem operasi yang anda gunakan seperti windows atau linux
