@@ -61,10 +61,11 @@ Setelah itu pertama-tama, navigasi ke sidebar APIs. Pada environment yang berada
 - Pada folder Activity/UnitOfMeasurement. Jalankan send request untuk ```Create UnitOfMeasurement```.
 
 Anda juga dapat mempelajari:
-> [Testing REST APIs using Postman and Newman](https://dev.to/sivalabs/testing-rest-apis-using-postman-and-newman-1hhp)
+> [Testing REST APIs using Postman and Newman](https://dev.to/sivalabs/testing-rest-apis-using-postman-and-newman-1hhp) <br>
+> [Writing Tests in Postman](https://learning.postman.com/docs/writing-scripts/test-scripts/) <br>
 
-Untuk tata cara penulisan tests script di Postman, dapat dilihat di [Writing Tests](https://learning.postman.com/docs/writing-scripts/test-scripts/) <br>
-Untuk dokumentasi flow API testing OSPRO, dapat dilihat di [Flow Test](https://github.com/praditauniversity/flow-test-reports)
+Untuk dokumentasi User Acceptance Test OSPRO, ada di [UAT - OSPRO](https://docs.google.com/spreadsheets/d/1nnqOw3AWtlsLxJXtLjpi1z-q5IWPHYeh3qON04dC8Ik/edit?usp=sharing) <br>
+Untuk dokumentasi flow API testing OSPRO, ada di [Flow Test](https://github.com/praditauniversity/flow-test-reports)
 
 
 ## How to Build Docker Image dan Run Docker  
