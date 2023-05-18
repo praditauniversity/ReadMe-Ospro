@@ -24,15 +24,46 @@ Install docker image berikut:
 
 Selanjutnya pada tiap repository backend, jalankan:
 - ```go mod tidy``` untuk memvalidasi dependensi (yang ada pada file go.mod).
-- ```docker compose up --build``` atau ```docker compose up --build -d``` (artinya membuild image docker dan melakukan running pada aplikasi docker).
+- ```docker compose up --build``` atau ```docker compose up --build -d``` (artinya membuild image docker dan melakukan running docker container).
+- Untuk repositori [ms-user-management](https://github.com/praditauniversity/ms-user-management), buka terminal baru, lalu lakukan:
+  - ```git checkout Staging``` untuk beralih ke branch Staging.
+  - ```git pull``` untuk memastikan penarikan kode dalam branch tersebut sudah up to date.
+  - Ikuti [Script cli docker psql](https://github.com/praditauniversity/ms-user-management/blob/Staging/cli_script_psql.txt) untuk melakukan insert data Admin.
 
 Pada repository gateway, jalankan:
 - ```npm install``` (Perintah ini menginstall semua paket/dependencies apa pun yang bergantung pada project) | Jika ```npm install``` tidak berfungsi dengan baik, dapat menambahkan command ```--legacy-peer-deps``` setelah ```npm install``` seperti berikut ini: ```npm install --legacy-peer-deps```
-- ```docker compose up --build``` atau ```docker compose up --build -d``` (artinya membuild image docker dan melakukan running pada aplikasi docker).
+- ```docker compose up --build``` atau ```docker compose up --build -d```
 
 Pada repository frontend, jalankan:
 - ```npm install``` (Perintah ini menginstall semua paket/dependencies apa pun yang bergantung pada project) | Jika ```npm install``` tidak berfungsi dengan baik, dapat menambahkan command ```--legacy-peer-deps``` setelah ```npm install``` seperti berikut ini: ```npm install --legacy-peer-deps```
-- ```docker compose up --build``` atau ```docker compose up --build -d``` (artinya membuild image docker dan melakukan running pada aplikasi docker).
+- ```docker compose up --build``` atau ```docker compose up --build -d```
+
+<br>Jika semua telah berhasil dijalankan, langkah selanjutnya:
+### Postman
+Download [Postman](https://www.postman.com/downloads/) atau Buka melalui [Postman Web](https://web.postman.co/home)
+
+Untuk mengakses Workspace OSPRO
+<details> 
+  <summary>Sign in with Google Account</summary>
+  Gmail: livelycomet@gmail.com <br>
+  Password: SmartLiving#123
+</details>
+
+Kemudian pilih Workspace yang bernama Living Comet, anda dapat melihat api test untuk tiap microservice pada sidebar collections atau juga pada sidebar APIs di folder ospro.
+
+Setelah itu pertama-tama, navigasi ke sidebar APIs. Pada environment yang berada di bagian kanan atas, pilih ```ms-local-env```. Kemudian pergi ke folder ospro/ProjectManagement, lakukanlah:
+- Pada folder user/auth. Pilih ```Auth Login as Admin```, lalu lakukan send request untuk login.
+- Pada folder Project/type. Jalankan send request untuk ```Create Project Type```.
+- Pada folder Project/phase. Jalankan send request untuk ```Create Project Phase```.
+- Pada folder Project/milestone. Jalankan send request untuk ```Create Project Milestone```.
+- Pada folder Activity/phase. Jalankan send request untuk ```Create Activity Phase 1-3```.
+- Pada folder Activity/UnitOfMeasurement. Jalankan send request untuk ```Create UnitOfMeasurement```.
+
+Anda juga dapat mempelajari:
+> [Testing REST APIs using Postman and Newman](https://dev.to/sivalabs/testing-rest-apis-using-postman-and-newman-1hhp)
+
+Untuk tata cara penulisan tests script di Postman, dapat dilihat di [Writing Tests](https://learning.postman.com/docs/writing-scripts/test-scripts/) <br>
+Untuk dokumentasi flow API testing OSPRO, dapat dilihat di [Flow Test](https://github.com/praditauniversity/flow-test-reports)
 
 
 ## How to Build Docker Image dan Run Docker  
@@ -89,22 +120,6 @@ Jalankan ```go mod tidy``` untuk memvalidasi dependensi (yang ada pada file go.m
 
 Untuk membuat repositori untuk microservice baru, dapat mengikuti template project di [Project Template](https://github.com/praditauniversity/ms-scaffold)
 
-## Postman
-Download [Postman](https://www.postman.com/downloads/) atau Buka melalui [Postman Web](https://web.postman.co/home)
-
-Untuk mengakses Workspace OSPRO
-<details> 
-  <summary>Sign in with Google Account</summary>
-  Gmail: livelycomet@gmail.com <br>
-  Password: SmartLiving#123
-</details>
-
-Kemudian pilih Workspace yang bernama Living Comet, anda dapat melihat api test untuk tiap microservice pada sidebar collections atau juga pada sidebar APIs di folder ospro.
-
-> [Testing REST APIs using Postman and Newman](https://dev.to/sivalabs/testing-rest-apis-using-postman-and-newman-1hhp)
-
-Untuk tata cara penulisan tests script di Postman, dapat dilihat di [Writing Tests](https://learning.postman.com/docs/writing-scripts/test-scripts/) <br>
-Untuk dokumentasi flow API testing OSPRO, dapat dilihat di [Flow Test](https://github.com/praditauniversity/flow-test-reports)
 
 ## GraphQL Mesh (Gateway)
 GraphQL yaitu bahasa yang digunakan untuk query API, yang juga menghubungkan sisi depan website atau client kepada sistem database atau backend untuk melakukan operasi atau kueri seperti menampilkan, menambahkan, menyunting, dan menghapus data.
