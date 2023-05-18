@@ -13,7 +13,11 @@ Repository pada github untuk aplikasi ospro dibagi menjadi tiga yaitu Backend, G
 
 Lakukanlah penarikan pada repositori-repositori di atas untuk menjalankan aplikasi OSPRO. Dapat dilakukan melalui [GitHub Desktop](https://desktop.github.com/) atau [GitHub di command line](https://cli.github.com/).
 
-Setelah melakukan penarikan pada repository yang sudah disebut lakukan langkah selanjutnya yaitu instalasi [Docker](https://www.docker.com/), [Golang](https://docs.studygolang.com/doc/install), [PostgreSQL](https://www.postgresql.org/download/), [NodeJs](https://nodejs.org/en/download).
+Setelah melakukan penarikan pada repository yang sudah disebut lakukan langkah selanjutnya yaitu melakukan penginstallan berikut:
+- [Docker](https://www.docker.com/) <br> Pilihlah sesuai dengan sistem operasi yang anda gunakan, seperti windows atau linux. Jika anda menginstall menggunakan windows, anda akan disuruh menginstall WSL 2 atau anda dapat melakukan instalasi [Alpine WSL](https://apps.microsoft.com/store/detail/alpine-wsl/9P804CRF0395?hl=en-id&gl=id&rtc=1), atau selengkapnya lihat di [How to install Docker on Windows](https://medium.com/devops-with-valentine/how-to-install-docker-on-windows-10-11-step-by-step-83074a80e6f9)
+- [Golang](https://docs.studygolang.com/doc/install)
+- [PostgreSQL](https://www.postgresql.org/download/)
+- [NodeJs](https://nodejs.org/en/download).
 
 Install docker image berikut:
 - [postgres](https://hub.docker.com/_/postgres), atau [How To Install and Run PostgreSQL using Docker](https://dev.to/shree_j/how-to-install-and-run-psql-using-docker-41j2)
@@ -30,12 +34,6 @@ Pada repository frontend, jalankan:
 - ```npm install``` (Perintah ini menginstall semua paket/dependencies apa pun yang bergantung pada project) | Jika ```npm install``` tidak berfungsi dengan baik, dapat menambahkan command ```--legacy-peer-deps``` setelah ```npm install``` seperti berikut ini: ```npm install --legacy-peer-deps```
 - ```docker compose up --build``` atau ```docker compose up --build -d``` (artinya membuild image docker dan melakukan running pada aplikasi docker).
 
-
-## Instalasi Docker
-Download [Docker](https://www.docker.com/), pilih lah sesuai dengan sistem operasi yang anda gunakan seperti windows atau linux
-jika anda menginstall menggunakan windows anda perlu melakukan beberapa langkah lagi untuk dapat menjalankan docker 
-pergi menuju microsoft store kemudian cari alpine setelah itu carilah aplikasi yang bernama Alpine WSL kemudian download 
-atau lalu ikuti tutorial di [Install Docker](https://www.petanikode.com/docker-install/)
 
 ## How to Build Docker Image dan Run Docker  
 Buka visual studio code lalu buka folder ms-project atau ms lainnya 
