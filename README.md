@@ -36,6 +36,7 @@ Pada repository gateway, jalankan:
 
 Pada repository frontend, jalankan:
 - ```npm install``` (Perintah ini menginstall semua paket/dependencies apa pun yang bergantung pada project) | Jika ```npm install``` tidak berfungsi dengan baik, dapat menambahkan command ```--legacy-peer-deps``` setelah ```npm install``` seperti berikut ini: ```npm install --legacy-peer-deps```
+- Sesuaikan untuk IP gateway pada line 18 di [App.jsx](https://github.com/praditauniversity/mf-main/blob/main/src/App.jsx). Misalkan anda menjalankan gateway di localhost, ubah uri menjadi seperti ```uri: "http://localhost:4000/graphql"```
 - ```docker compose up --build``` atau ```docker compose up --build -d```
 
 <br>Jika semua telah berhasil dijalankan, langkah selanjutnya:
