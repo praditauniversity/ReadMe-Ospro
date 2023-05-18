@@ -67,13 +67,11 @@ Untuk dokumentasi flow API testing OSPRO, dapat dilihat di [Flow Test](https://g
 
 
 ## How to Build Docker Image dan Run Docker  
-Buka visual studio code lalu buka folder ms-project atau ms lainnya 
-Buka terminal pada visual studio code 
-lalu pada command prompt tuliskan ```docker compose up --build``` (artinya membuild image docker dan melakukan running pada aplikasi docker).
-Untuk melakukan docker berjalan pada background application lakukan ```docker compose up --build -d``` (artinya mem-build docker image dan melakukan running pada aplikasi docker dilakukan pada background aplikasi).
-Untuk mematikan docker yang sedang berjalan lakukan ```docker compose down```. 
-Untuk menghilangkan seluruh data aplikasi beserta database di docker lakukan ```docker compose down -v```. 
-Lakukan setiap hal ini pada semua microservice, gateway, frontend yang ingin dijalankan.
+Buka folder ms-project atau ms lainnya melalui cmd atau terminal di [Visual Studio Code](https://code.visualstudio.com/download). 
+Tuliskan ```docker compose up --build``` (artinya membuild image docker dan melakukan running docker container).
+Untuk menjalankan docker container pada background application, lakukan ```docker compose up --build -d``` (artinya mem-build docker image dan melakukan running docker container pada background aplikasi).
+Untuk mematikan docker container yang sedang berjalan lakukan ```docker compose down```. 
+Untuk menghilangkan seluruh data aplikasi beserta database di docker container lakukan ```docker compose down -v```. 
 
 ## How to Remove Unused Docker
 ```bash
@@ -206,16 +204,20 @@ Berikut merupakan tutorial dan juga tips yang dapat berguna untuk mengembangkan 
 ### GraphQL - Apollo Client
 - https://www.youtube.com/watch?v=YyUWW04HwKY
 
-## Selamat Mencoba salam kami dari angkatan 19 dan 21 yang membuat project ini. Kami harap kalian mendapatkan pengalaman yang banyak setelah melakukan pengembangan aplikasi ini. Good luck and wish you all the best!
 
-Untuk mau bertanya tanya tentang project ini, we are very welcome. Berikut kontak email kami :
+## Selamat Mencoba! Salam kami dari angkatan 19 dan 21 yang membuat project ini. Kami harap kalian mendapatkan pengalaman yang banyak setelah melakukan pengembangan aplikasi ini. Good luck and wish you all the best!
+
+Untuk mau bertanya-tanya tentang project ini, we are very welcome. Berikut kontak email kami :
 
 projectmanagementospro@gmail.com
 
 ### Backend
+- Hendra Lijaya
+- Austin Nicholas
 - Stephen Winata (stephenwinata23@gmail.com)
 - Brian Mikhael (brian.mikhael@student.pradita.ac.id)
 
 ### Frontend
+- Patricia Ho
 - Christoper Jordan (christoper.jordan@student.pradita.ac.id)
 - Phance Karyadi (phance.karyadi@student.pradita.ac.id)
