@@ -18,6 +18,7 @@ Setelah melakukan penarikan pada repository yang sudah disebut lakukan langkah s
 - [Golang](https://docs.studygolang.com/doc/install)
 - [PostgreSQL](https://www.postgresql.org/download/)
 - [NodeJs](https://nodejs.org/en/download).
+- [Yarn](https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable)
 
 Install docker image berikut:
 - [postgres](https://hub.docker.com/_/postgres), atau [How To Install and Run PostgreSQL using Docker](https://dev.to/shree_j/how-to-install-and-run-psql-using-docker-41j2)
@@ -32,10 +33,10 @@ Selanjutnya pada tiap repository backend, jalankan:
 
 Pada repository gateway, jalankan:
 - ```npm install``` (Perintah ini menginstall semua paket/dependencies apa pun yang bergantung pada project) | Jika ```npm install``` tidak berfungsi dengan baik, dapat menambahkan command ```--legacy-peer-deps``` setelah ```npm install``` seperti berikut ini: ```npm install --legacy-peer-deps```
-- ```docker compose up --build``` atau ```docker compose up --build -d```
+- ```npm run dev```
 
 Pada repository frontend, jalankan:
-- ```npm install``` (Perintah ini menginstall semua paket/dependencies apa pun yang bergantung pada project) | Jika ```npm install``` tidak berfungsi dengan baik, dapat menambahkan command ```--legacy-peer-deps``` setelah ```npm install``` seperti berikut ini: ```npm install --legacy-peer-deps```
+- ```npm install``` (Perintah ini menginstall semua paket/dependencies apa pun yang bergantung pada project) | Jika ```npm install``` tidak berfungsi dengan baik, dapat menambahkan command ```--legacy-peer-deps``` setelah ```npm install``` seperti berikut ini: ```npm install --legacy-peer-deps```. Jika tetap bermasalah, gunakan command ```yarn install```
 - Sesuaikan untuk IP gateway pada line 18 di [App.jsx](https://github.com/praditauniversity/mf-main/blob/main/src/App.jsx). Misalkan anda menjalankan gateway di localhost, ubah uri menjadi seperti ```uri: "http://localhost:4000/graphql"```
 - ```docker compose up --build``` atau ```docker compose up --build -d```
 
