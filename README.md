@@ -44,12 +44,14 @@ Pada repository frontend, jalankan:
 ### Postman
 Download [Postman](https://www.postman.com/downloads/) atau Buka melalui [Postman Web](https://web.postman.co/home)
 
-Untuk mengakses Workspace OSPRO
+Untuk mengakses Workspace OSPRO, lakukan:
 <details> 
-  <summary>Sign in with Google Account</summary>
+  <summary>Sign in dengan Google Account ini di browser anda</summary>
   Gmail: livelycomet@gmail.com <br>
   Password: SmartLiving#123
 </details>
+
+Setelah itu Sign In With Google Account di Postman dengan akun google diatas
 
 Kemudian pilih Workspace yang bernama Living Comet, anda dapat melihat api test untuk tiap microservice pada sidebar collections atau juga pada sidebar APIs di folder ospro.
 
