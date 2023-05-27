@@ -78,6 +78,31 @@ Untuk menjalankan docker container pada background application, lakukan ```docke
 Untuk mematikan docker container yang sedang berjalan lakukan ```docker compose down```. 
 Untuk menghilangkan seluruh data aplikasi beserta database di docker container lakukan ```docker compose down -v```. 
 
+## How to Open Postgres in Docker Container by Terminal
+```bash
+# Open a shell session inside a running Docker container named servicename_db (replace servicename_db with the actual service's database name)
+docker compose exec servicename_db /bin/sh
+
+# Start the PostgreSQL interactive terminal and connect to the servicename database using the root username (replace servicename with the actual service's name)
+psql -d servicename -U root
+
+# List all tables in the currently connected database
+\dt
+
+# Get information about a specific table named tablename (replace tablename with the actual table name)
+\d tablename
+
+# Select all records from a table named dbname(s) (replace dbname with the actual database name)
+select * from dbname(s);
+
+# Exit the PostgreSQL interactive terminal
+\q
+
+# Exit the shell session within the Docker container and return to the host system's shell prompt
+exit
+
+```
+
 ## How to Remove Unused Docker
 ```bash
 # Displays information regarding the amount of disk space used by the docker daemon.
