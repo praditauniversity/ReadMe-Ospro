@@ -83,7 +83,7 @@ Untuk menghilangkan seluruh data aplikasi beserta database di docker container l
 # Open a shell session inside a running Docker container named servicename_db (replace servicename_db with the actual service's database name)
 docker compose exec servicename_db /bin/sh
 
-# Start the PostgreSQL interactive terminal and connect to the servicename database using the root username (replace servicename with the actual service's name)
+# Start the PostgreSQL interactive terminal and connect to the servicename database using the root username (replace servicename with the actual service name)
 psql -d servicename -U root
 
 # List all tables in the currently connected database
@@ -92,7 +92,7 @@ psql -d servicename -U root
 # Get information about a specific table named tablename (replace tablename with the actual table name)
 \d tablename
 
-# Select all records from a table named dbname(s) (replace dbname with the actual database name)
+# Select all records from a table named dbname(s) (replace dbname(s) with the actual database name)
 select * from dbname(s);
 
 # Exit the PostgreSQL interactive terminal
