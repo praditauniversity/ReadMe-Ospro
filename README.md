@@ -32,13 +32,12 @@ Selanjutnya pada tiap repository backend, jalankan:
   - Ikuti [Script cli docker psql](https://github.com/praditauniversity/ms-user-management/blob/Staging/cli_script_psql.txt) untuk melakukan insert data Admin.
 
 Pada repository gateway, jalankan:
-- ```npm install``` (Perintah ini menginstall semua paket/dependencies apa pun yang bergantung pada project) | Jika ```npm install``` tidak berfungsi dengan baik, dapat menambahkan command ```--legacy-peer-deps``` setelah ```npm install``` seperti berikut ini: ```npm install --legacy-peer-deps```
+- ```npm install``` (Perintah ini menginstall semua paket/dependencies apa pun yang bergantung pada project) | Jika ```npm install``` tidak berfungsi dengan baik, dapat menambahkan command ```--legacy-peer-deps``` setelah ```npm install``` seperti berikut ini: ```npm install --legacy-peer-deps```. Jika tetap bermasalah, gunakan command ```yarn install```
 - ```npm run dev```
 
-Pada repository frontend, jalankan:
-- ```npm install``` (Perintah ini menginstall semua paket/dependencies apa pun yang bergantung pada project) | Jika ```npm install``` tidak berfungsi dengan baik, dapat menambahkan command ```--legacy-peer-deps``` setelah ```npm install``` seperti berikut ini: ```npm install --legacy-peer-deps```. Jika tetap bermasalah, gunakan command ```yarn install```
+Pada repository frontend, lakukan:
 - Sesuaikan untuk IP gateway pada line 18 di [App.jsx](https://github.com/praditauniversity/mf-main/blob/main/src/App.jsx). Misalkan anda menjalankan gateway di localhost, ubah uri menjadi seperti ```uri: "http://localhost:4000/graphql"```
-- ```docker compose up --build``` atau ```docker compose up --build -d```
+- ```docker compose up``` atau ```docker compose up --build -d```
 
 <br>Jika semua telah berhasil dijalankan, langkah selanjutnya:
 ### Postman
