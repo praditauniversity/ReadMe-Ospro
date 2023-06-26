@@ -24,11 +24,9 @@
   4. Fitur seperti kotak ceklis atau tombol untuk mengubah status activity
 
 ## HOW TO RUN OSPRO APPLICATION
-Tutorial untuk menjalankan OSPRO pada lokal server
-
-Semua microservice yang berada pada repository untuk aplikasi OSPRO dapat di jalankan di lokal connection.
-
-Cara menjalankan ospro application
+Arsitektur aplikasi web OSPRO yang digunakan ialah arsitektur microservices yang merupakan model arsitektur yang memisahkan aplikasi menjadi beberapa komponen yang independen dan diimplementasikan sebagai aplikasi yang dapat berdiri sendiri, dikembangkan, di deploy, dan diubah secara independen tanpa mempengaruhi komponen lainnya. Dengan menerapkan arsitektur microservices, jika salah satu bagian dari aplikasi mengalami masalah, hanya bagian tersebut yang terpengaruh, sehingga mengurangi dampaknya pada keseluruhan sistem. <br>
+Tiap microservices ditampung ke dalam suatu docker container. Tiap Docker container memiliki dua Docker images didalamnya, yaitu fungsi aplikasi dan basis data aplikasi dari suatu microservices. Jadi tiap microservices memiliki database tersendiri yang ditampung dalam container <br>
+Dalam pengelolaan data dari masing-masing microservices digunakan GraphQL sebagai penghubung dari database pada tiap microservice berdasarkan API masing-masing ke sisi depan (Frontend)
 
 ## Tutorial 
 Repository pada github untuk aplikasi ospro dibagi menjadi tiga yaitu Backend, Gateway dan Frontend.
