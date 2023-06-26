@@ -1,4 +1,26 @@
-# READ ME FIRST TO RUN OSPRO APPLICATION
+# READ ME FIRST
+## Unfinished Project Progress
+### Notes (Bagian ini beriskan progress-progress yang belum di implementasikan dalam project ini)
+- Belum ada Role pada user management (Hal ini dibutuhkan untuk membedakan level/tingkat otoritas yang dapat dilakukan oleh user terhadap project)
+- Export file dari project yang berbentuk dokumen, seperti Minutes of Meeting, Daily Report, Project Charter, dan lain sebagainya yang berbentuk dokumen.
+- Advance UI (ini berisikan customize tampilan komponen yang dapat diubah-ubah oleh user seperti penambahan, perubahan ukuran, pemindahan)
+- Berhubungan dengan account (Reset Password, Forget Password, username, email, dan lain sebagainya)
+- Edit Profile (Belum dapat melakukan perubahan data-data pada user karena belum ada database yang menyimpan data-data user)
+- Komponen sudah dibuat namun belum terkoneksi dengan database:
+  1. Chart Project Progress
+  2. Issue
+  3. SCurve
+  4. Manpower
+  5. Daily Reminder
+  6. Kalender
+  7. Jam
+- Gantt Chart yang berhubungan dengan:
+  1. Fitur antar activity, dimana subactivity mengikuti range timeline dari mainactivity sehingga tidak bisa dibuat untuk tanggal sebelum atau sesudah main activity termasuk ketika melakukan update dan delete. Misalnya update mainactivity akan otomatis mengganti subactivity juga.
+  2. Fitur Link (garis kuning penghubung activity) batasan dimana jika tanggal awal Activity A setelah tanggal akhir Activity B maka activity A tidak bisa diberikan Link yang mengharuskan Activity A dikerjakan terlebih dahulu sebelum ke Activity B karena berdasar timeline Activity B lebih dahulu.
+  3. Fitur assignment activity untuk menambahkan user/anggota tim yang ditugaskan untuk activity tersebut pada sebuah project
+  4. Fitur seperti kotak ceklis atau tombol untuk mengubah status activity
+
+## HOW TO RUN OSPRO APPLICATION
 Tutorial untuk menjalankan OSPRO pada lokal server
 
 Semua microservice yang berada pada repository untuk aplikasi OSPRO dapat di jalankan di lokal connection.
