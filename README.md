@@ -4,6 +4,7 @@
 - Belum ada Role pada user management (Hal ini dibutuhkan untuk membedakan level/tingkat otoritas yang dapat dilakukan oleh user terhadap project)
 - Export file dari project yang berbentuk dokumen, seperti Minutes of Meeting, Daily Report, Project Charter, dan lain sebagainya yang berbentuk dokumen.
 - Fitur Import / Upload file
+- Form yang berhubungan dengan lokasi, mengambil lokasi dari device pengguna sekarang.
 - Advance UI (ini berisikan customize tampilan komponen yang dapat diubah-ubah oleh user seperti penambahan, perubahan ukuran, pemindahan)
 - Berhubungan dengan account (Reset Password, Forget Password, username, email, dan lain sebagainya)
 - Edit Profile (Belum dapat melakukan perubahan data-data pada user karena belum ada database yang menyimpan data-data user)
@@ -22,6 +23,15 @@
   2. Fitur Link (garis kuning penghubung activity) batasan dimana jika tanggal awal Activity A setelah tanggal akhir Activity B maka activity A tidak bisa diberikan Link yang mengharuskan Activity A dikerjakan terlebih dahulu sebelum ke Activity B karena berdasar timeline Activity B lebih dahulu.
   3. Fitur assignment activity untuk menambahkan user/anggota tim yang ditugaskan untuk activity tersebut pada sebuah project
   4. Fitur seperti kotak ceklis atau tombol untuk mengubah status activity
+- Microservices yang belum berjalan:
+  1. Ms-Document
+  2. Ms-Day
+  3. Ms-Menu
+  4. Ms-K3
+  5. Ms-Message
+  6. Ms-Material
+  7. Ms-Finance
+  8. Ms-Location
 
 ## HOW TO RUN OSPRO APPLICATION
 Arsitektur aplikasi web OSPRO yang digunakan ialah arsitektur microservices yang merupakan model arsitektur yang memisahkan aplikasi menjadi beberapa komponen yang independen dan diimplementasikan sebagai aplikasi yang dapat berdiri sendiri, dikembangkan, di deploy, dan diubah secara independen tanpa mempengaruhi komponen lainnya. Dengan menerapkan arsitektur microservices, jika salah satu bagian dari aplikasi mengalami masalah, hanya bagian tersebut yang terpengaruh, sehingga mengurangi dampaknya pada keseluruhan sistem. <br><br>
