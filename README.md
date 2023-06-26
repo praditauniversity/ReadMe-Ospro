@@ -6,6 +6,7 @@
 - Advance UI (ini berisikan customize tampilan komponen yang dapat diubah-ubah oleh user seperti penambahan, perubahan ukuran, pemindahan)
 - Berhubungan dengan account (Reset Password, Forget Password, username, email, dan lain sebagainya)
 - Edit Profile (Belum dapat melakukan perubahan data-data pada user karena belum ada database yang menyimpan data-data user)
+- Login dengan authentikasi lain (Seperti Google, Facebook, dan lain sebagainya)
 - Komponen sudah dibuat namun belum terkoneksi dengan database:
   1. Chart Project Progress
   2. Issue
