@@ -1,6 +1,6 @@
 # READ ME FIRST
 ## Unfinished Project Progress
-### Notes (Bagian ini beriskan progress-progress yang belum di implementasikan dalam project ini)
+### Notes (Bagian ini berisikan progress-progress yang belum di implementasikan dalam project ini)
 - Belum ada Role pada user management (Hal ini dibutuhkan untuk membedakan level/tingkat otoritas yang dapat dilakukan oleh user terhadap project)
 - Export file dari project yang berbentuk dokumen, seperti Minutes of Meeting, Daily Report, Project Charter, dan lain sebagainya yang berbentuk dokumen.
 - Fitur Import / Upload file
@@ -10,6 +10,7 @@
 - Edit Profile (Belum dapat melakukan perubahan data-data pada user karena belum ada database yang menyimpan data-data user)
 - Login dengan authentikasi lain (Seperti Google, Facebook, dan lain sebagainya)
 - Verifikasi email (dikirimkan email verifikasi seperti code)
+- Fitur Search dan Filter data di halaman project charter, daily report, dan minutes of meeting
 - Komponen sudah dibuat namun belum terkoneksi dengan database:
   1. Chart Project Progress
   2. Issue
