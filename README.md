@@ -92,8 +92,155 @@ Untuk dokumentasi User Acceptance Test OSPRO, ada di [UAT - OSPRO](https://docs.
 Untuk dokumentasi flow API testing OSPRO, ada di [Flow Test](https://github.com/praditauniversity/flow-test-reports)
 
 
-## How to Build Docker Image dan Run Docker  
-Buka folder ms-project atau ms lainnya melalui cmd atau terminal di [Visual Studio Code](https://code.visualstudio.com/download). 
+## How to Build Docker Image dan Run Docker 
+Anda dapat melihat konfigurasi microservices di [Template Microservices](https://github.com/praditauniversity/ms-scaffold).
+Dalam file template microservices ini, dalam build docker diperlukan untuk mengkonfigurasi 3 file yang terpenting dalam membuild docker image:
+- [.env](https://github.com/praditauniversity/ms-scaffold/blob/main/.env). Berkas .env (environment) adalah berkas konfigurasi yang digunakan untuk menyimpan variabel lingkungan (environment variables) dalam aplikasi. Variabel lingkungan adalah nilai yang dapat digunakan dalam aplikasi untuk mengonfigurasi berbagai aspek, seperti pengaturan aplikasi, pengaturan database, kunci rahasia, koneksi ke layanan eksternal, dan sebagainya. 
+Ubah value dari APP_NAME, SERVICE_ID, dan SERVICE_NAME sesuai nama dan kebutuhan microservices.
+  ```bash
+  # Menentukan nama aplikasi sebagai "MS_SCAFFOLD"
+  APP_NAME=MS_SCAFFOLD
+
+  # Menentukan ID service sebagai "1"
+  SERVICE_ID=1
+  
+  # Menentukan nama service sebagai "scaffold"
+  SERVICE_NAME=scaffold
+  
+  # Menentukan zona waktu sebagai "Asia/Jakarta"
+  TZ=Asia/Jakarta
+  
+  # Menentukan mode SSL sebagai "disable"
+  SSL_MODE=disable
+  
+  # Menentukan lingkungan (environment) Go sebagai "test"
+  GO_ENV=test
+  
+  # Menentukan port Go sebagai "8080"
+  GO_PORT=8080
+  
+  # Menentukan direktori data PostgreSQL sebagai "/var/lib/postgresql/data/pgdata"
+  PGDATA=/var/lib/postgresql/data/pgdata
+  
+  # Menentukan pengguna PostgreSQL sebagai "root"
+  POSTGRES_USER=root
+  
+  # Menentukan kata sandi PostgreSQL sebagai "root"
+  POSTGRES_PASSWORD=root
+  
+  # Menentukan nama basis data PostgreSQL berdasarkan nilai dari variabel SERVICE_NAME (dalam contoh ini, "scaffold")
+  POSTGRES_DB=${SERVICE_NAME}
+  
+  # Menentukan kunci rahasia JSON Web Token (JWT) untuk otentikasi sebagai "ac43724f16e9241d990427ab7c8f4228"
+  JWT_SECRET_AUTH=ac43724f16e9241d990427ab7c8f4228
+  
+  # Menentukan kunci rahasia JSON Web Token (JWT) untuk penyegaran sebagai "03b62516184fb6ef591f45bd4974b753"
+  JWT_SECRET_REFRESH=03b62516184fb6ef591f45bd4974b753
+  
+  # Menentukan nama basis data berdasarkan nilai dari variabel POSTGRES_DB (dalam contoh ini, "scaffold")
+  DB_NAME=${POSTGRES_DB}
+  
+  # Menentukan pengguna basis data berdasarkan nilai dari variabel POSTGRES_USER (dalam contoh ini, "root")
+  DB_USER=${POSTGRES_USER}
+  
+  # Menentukan kata sandi basis data berdasarkan nilai dari variabel POSTGRES_PASSWORD (dalam contoh ini, "root")
+  DB_PASS=${POSTGRES_PASSWORD}
+  
+  # Menentukan host basis data sebagai "db"
+  DB_HOST=db
+  
+  # Menentukan port basis data sebagai "5432"
+  DB_PORT=5432
+  
+  # Menentukan port "scaffold" berdasarkan nilai dari variabel SERVICE_ID (dalam contoh ini, "1001")
+  SCAFFOLD_PORT=100${SERVICE_ID}
+  
+  # Menentukan port basis data "scaffold" berdasarkan nilai dari variabel SERVICE_ID (dalam contoh ini, "2001")
+  SCAFFOLD_DB_PORT=200${SERVICE_ID}
+  ```
+- [Dockerfile](https://github.com/praditauniversity/ms-scaffold/blob/main/config/docker/Dockerfile). Dockerfile adalah file teks yang digunakan untuk membangun image Docker. Dockerfile berisi serangkaian perintah yang memberikan instruksi kepada Docker Engine tentang cara membangun image yang akan digunakan untuk menjalankan aplikasi dalam wadah (container) Docker. Ubah 'scaffold' dengan nama microservices baru yang ingin ditambahkan.
+  ```bash
+  # Menggunakan image golang:alpine sebagai dasar
+  FROM golang:alpine
+  
+  # Membuat direktori /scaffold di dalam container
+  RUN mkdir /scaffold
+  
+  # Mengatur direktori kerja saat ini menjadi /report di dalam container
+  WORKDIR /scaffold
+  
+  # Menambahkan file go.mod ke dalam container di direktori /report
+  ADD ./go.mod .
+  
+  # Menambahkan file go.sum ke dalam container di direktori /report
+  ADD ./go.sum .
+  
+  # Mendownload dependensi yang didefinisikan dalam go.mod
+  RUN go mod download
+  
+  # Menginstall CompileDaemon dari GitHub menggunakan go mod
+  RUN go install -mod=mod github.com/githubnemo/CompileDaemon
+  
+  # Membuat direktori ./bin di dalam container
+  RUN mkdir -p ./bin
+  
+  # Menambahkan semua file yang ada dalam direktori proyek ke dalam container di direktori /scaffold
+  ADD . .
+  
+  # Mengekspos port 8080 dari container
+  EXPOSE 8080
+  
+  # Menjalankan CompileDaemon saat container dimulai
+  # -log-prefix=false : Menonaktifkan prefix log
+  # -directory="." : Mengawasi direktori saat ini
+  # -build="go build -o ./bin/report" : Memanggil go build untuk membangun proyek dan menghasilkan file biner bernama report di dalam direktori /bin
+  # -command="./bin/report" : Menjalankan file biner report sebagai perintah utama dalam container
+  ENTRYPOINT CompileDaemon -log-prefix=false -directory="." -build="go build -o ./bin/report" -command="./bin/report"
+  ```
+- [docker-compose.yml](https://github.com/praditauniversity/ms-scaffold/blob/main/docker-compose.yml). Berkas docker-compose.yml digunakan untuk mendefinisikan dan mengelola kumpulan layanan (services) dalam lingkungan Docker menggunakan Docker Compose yang memungkinkan pengguna untuk mendefinisikan dan menjalankan aplikasi yang terdiri dari beberapa kontainer Docker secara terkoordinasi.
+Terdapat dua services, yang pertama untuk nama container microservice dan yang kedua untuk nama container database microservice nya. Ubahlah sesuai dengan kebutuhan microservices baru yang ingin anda tambahkan.
+  ```bash
+  version: "3"  # Versi dari Docker Compose yang digunakan
+
+  services:  # Mendefinisikan layanan dalam aplikasi
+    scaffold:  # Layanan bernama "scaffold"
+      container_name: ${SERVICE_NAME}  # Nama kontainer yang akan digunakan
+      restart: always  # Mengatur kebijakan restart kontainer menjadi "always"
+      tty: true  # Mengatur mode terminal untuk kontainer menjadi "true"
+      build:  # Konfigurasi untuk membangun kontainer
+        context: .  # Konteks build adalah direktori saat ini
+        dockerfile: ./config/docker/Dockerfile  # Lokasi Dockerfile yang akan digunakan
+      working_dir: /${SERVICE_NAME}  # Direktori kerja dalam kontainer
+      volumes:  # Mengaitkan volume antara host dan kontainer
+        - .:/${SERVICE_NAME}  # Mengaitkan direktori host saat ini dengan direktori dalam kontainer
+      ports:  # Menentukan port yang akan diekspos
+        - ${SCAFFOLD_PORT}:8080  # Mengaitkan port host dengan port dalam kontainer
+      env_file: .env  # Menggunakan berkas .env untuk mengatur variabel lingkungan
+      links:  # Membuat tautan antara kontainer
+        - "scaffold_db:db"  # Membuat tautan dengan layanan "scaffold_db"
+      depends_on:  # Menentukan dependensi antara layanan
+        - scaffold_db  # Menunjukkan bahwa layanan ini bergantung pada layanan "scaffold_db"
+  
+    scaffold_db:  # Layanan database bernama "scaffold_db"
+      container_name: scaffold_db  # Nama kontainer yang akan digunakan
+      healthcheck:  # Konfigurasi pemeriksaan kesehatan
+        test: ["CMD-SHELL", "pg_isready -U root -d ${SERVICE_NAME}"]  # Perintah untuk memeriksa ketersediaan basis data
+        interval: 15s  # Interval antara pemeriksaan kesehatan
+        timeout: 1m  # Waktu maksimum untuk menunggu respons pemeriksaan kesehatan
+        retries: 5  # Jumlah percobaan pemeriksaan kesehatan yang akan dilakukan
+        start_period: 30s  # Waktu yang harus dilewati sebelum memulai pemeriksaan kesehatan
+      image: postgres  # Menggunakan image Docker "postgres" sebagai basis untuk kontainer
+      restart: always  # Mengatur kebijakan restart kontainer menjadi "always"
+      env_file: .env  # Menggunakan berkas .env untuk mengatur variabel lingkungan
+      volumes:  # Mengaitkan volume antara host dan kontainer
+        - scaffold_db_data:/var/lib/postgresql/data  # Mengaitkan volume yang akan digunakan untuk menyimpan data basis data
+      ports:  # Menentukan port yang akan diekspos
+        - ${SCAFFOLD_DB_PORT}:5432  # Mengaitkan port host dengan port dalam kontainer
+  
+  volumes:  # Mendefinisikan volume yang digunakan dalam aplikasi
+    scaffold_db_data:  # Volume bernama "scaffold_db_data"
+  ```
+Selanjutnya buka folder ms-project atau ms-lainnya melalui cmd atau terminal di [Visual Studio Code](https://code.visualstudio.com/download). 
 Tuliskan ```docker compose up --build``` (artinya membuild image docker dan melakukan running docker container).
 Untuk menjalankan docker container pada background application, lakukan ```docker compose up --build -d``` (artinya mem-build docker image dan melakukan running docker container pada background aplikasi).
 Untuk mematikan docker container yang sedang berjalan lakukan ```docker compose down```. 
